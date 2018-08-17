@@ -1,0 +1,33 @@
+.nav {
+	text-align: center;/*盒子内的元素居中*/
+}
+
+.nav a { /*后代选择器,包括儿子孙子...*/
+	height: 50px;
+	width: 120px;
+	display: inline-block; /*标签显示模式分为三种：
+								1.block(块),这种元素会独占整一行，可以设置宽高，例如div,h,p
+								2.inline(行内),这种元素会在一行内显示，不会独占一整行，并且宽高不能设置，设置也无效，宽高随着内容的变化而变化，例如span；
+								3.inline-block(行内块),这种元素具备block和inline元素的特征，可以设置宽高，并且会在一行内显示，不会独占一整行,例如img。
+							 元素显示模式之间是可以转换的。
+								因为a标签是inline行内元素，行内元素不能设置宽高，想设置宽高并且一行内显示，则可以转换成inline-block元素*/
+	background-color: yellow;
+	text-align: center;
+	line-height: 50px;/*line-height与height高度一样的时候，可以一行文本垂直居中*/
+	text-decoration: none;/*去掉下划线*/
+}
+
+.nav a:hover{ /*伪类选择器
+			    ：link(正常情况下的链接，还未被访问),
+				:visited(访问后的链接),
+				:hover(鼠标悬停的链接),
+				:active(激活状态的链接，鼠标按下还没有松开)
+				必须按照这几种顺序(lvhao简单记忆法)来书写，否则会出现奇怪的问题。因为在同时激活不同状态的时候，后面的伪类会覆盖前面的。
+				分析：
+				  1. 链接不可能同时处于link或者visited的状态(不可能出现未被访问又被访问的情况)，所以两者顺序可以颠倒
+				  2. 当鼠标悬停或者点击的时候，链接处于link，hover或者active的状态，如果link写在hover或者acvitive后面就会被覆盖，所以link在前面；  
+				  3. 若把visited放在hover后面，如果一个链接已经被访问过了，则会一直触发visited，怎样都无法触发hover伪类了，所以visited在hover前；
+				  4. 若active在hover前面，当按下鼠标的时候激活active状态同时触发了hover伪类，这时候hover会覆盖active伪类，估hover在active前面
+			  */
+	background-color: pink;
+}
