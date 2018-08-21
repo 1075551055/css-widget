@@ -13,7 +13,38 @@
 								因为a标签是inline行内元素，行内元素不能设置宽高，想设置宽高并且一行内显示，则可以转换成inline-block元素*/
 	background-color: yellow;
 	text-align: center;
-	line-height: 50px;/*line-height与height高度一样的时候，可以一行文本垂直居中*/
+	line-height: 50px;/*子元素line-height与父类容器height高度一样的时候，可以一行文本垂直居中。
+						这里把a变成了inline-block后，相当于一个inline容器，inline模型中一个叫inline boxes的东西，
+						这个是看不清摸不着的，主要作用是用来包裹文字的，inline boxes什么特性也没有，就高度，那么这里就
+						相当于把a标签包裹在了inline boxes中。
+
+
+						CSS中起高度作用的应该就是height以及line-height了吧！如果一个标签没有定义height属性(包括百分比高度)，
+						那么其最终表现的高度一定是由line-height起作用（可以试试看，假如设置了height, line-height怎么
+						设置都是不起作用的，通过浏览器F12查看分析）。
+						其实line boxes不是直接的生产者，属于中层干部，真正的活儿都是它的手下 – inline boxes干的，
+						这些手下就是文字啦，图片啊，<span>之类的inline属性的标签啦。line boxes只是个考察汇报人员，
+						考察它的手下谁的实际line-height值最高，谁最高，它就要谁的值，然后向上汇报，
+						形成高度。例如，
+						<div>
+							<span style="line-height:20px;">
+								取手下line-height
+								<span style="line-height:60px;">最高</span>的值
+							</span>
+					    </div>
+					    则line boxes的高度就是40像素了,也是div的高度
+
+
+					    可以想象一下，当div没有设置高度的时候，在里面填入一些文字，都会觉得是文字撑大了div，
+						其实不然，而是这个inline boxes撑大了div，这个东西的height取决于文字(例如span这种标签
+						可以直接理解为文字)的line-height。默认情况下一行文本的行高分为：上间距，文本的高度，
+						下间距，并且上间距是等于下间距的，所以文字默认在这一行中是垂直居中的。
+						所以这里虽然父容器没有设置高度，其实默认一行文本就是垂直居中的，如果父容器.nav
+						设置了高度为50px(可以想象a标签漂浮在nav上面，刚好inline boxes的高度等于nav高度，重叠
+						在一起了，这个时候本身文本就是垂直居中在inline boxes中的，看起来就是垂直居中在nav中)，
+						则同理也是垂直居中的。（总的来说就是文字包括类似span这种可以看做文字
+						的行内元素有一层inline boxes包裹着，它们的line-height直接影响到inline boxes的高度）
+					   */
 	text-decoration: none;/*去掉下划线*/
 }
 
