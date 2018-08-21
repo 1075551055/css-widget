@@ -1,0 +1,40 @@
+* {
+	margin: 0px;
+	padding: 0px;  /*浏览器以及元素例如ul会有一定的margin与padding值，所以可以全清零，然后自行调节*/
+}  
+
+.news-list {
+	height: 285px;
+	width: 395px;
+	margin: 50px;
+	border: 1px solid rgb(204, 204, 204);
+	padding: 15px 20px 0px;
+}	
+
+.news-list h4 {
+	border-bottom: 1px solid rgb(204, 204, 204);
+	padding: 8px 0px;
+	margin-bottom: 10px;
+}
+
+li {
+	list-style: none;
+}
+
+.news-list li {
+	height: 35px;
+	/*line-height: 35px; */
+	border-bottom: 1px dashed rgb(204, 204, 204);
+	text-indent: 2em;
+}
+
+.news-list a {
+	text-decoration: none;
+	color: #333;
+	font-size: 10px;
+	line-height: 35px;/*这样也能居中，与上面作比较。 子元素的line-height与父容器高度一样可以一行文本垂直居中*/
+}
+
+.news-list a:hover {
+	text-decoration: underline;
+}
