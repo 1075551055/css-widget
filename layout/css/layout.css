@@ -1,0 +1,62 @@
+body {
+	background-color: #fff;
+}
+
+/*原始版*/
+/*.nav {
+	width: 960px;
+	height: 100px;
+	margin: 0 auto;  盒子水平居中，auto代表自动填满，只对左右有用，这里相当于左右填满，则div给压到了水平中间位置, margin:auto也可以
+	background-color: #d8d9de;
+}
+
+.banner {
+	width: 960px;
+	height: 110px;
+	margin: 0 auto; 
+	background-color: skyblue;
+}
+
+.main {
+	width: 960px;
+	height: 600px;
+	margin: 0 auto; 
+	background-color: #eee;
+}
+
+.footer {
+	width: 960px;
+	height: 100px;
+	margin: 0 auto; 
+	background-color: #acacac;
+}*/
+
+/*优化版*/
+
+.nav,
+.banner,
+.main,
+.footer {
+	width: 960px;
+	margin: 0 auto; 
+	height: 100px;
+}
+
+.nav {
+	background-color: #d8d9de;
+}
+
+.banner {
+	height: 110px; /*css有三大特效：层叠性，继承性(height这种属性不能继承),优先性(不同选择器有不同权重),
+	               这里会把上面的height: 100px覆盖掉， 体现了层叠性;*/
+	background-color: skyblue;
+}
+
+.main {
+	height: 600px;
+	background-color: #eee;
+}
+
+.footer {
+	background-color: #acacac;
+}
