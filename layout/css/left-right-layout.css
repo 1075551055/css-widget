@@ -1,0 +1,53 @@
+body {
+	background-color: #fff;
+}
+
+.nav,
+.banner,
+.main,
+.footer {
+	width: 960px;
+	margin: 5px auto; 
+	height: 100px;
+}
+
+.nav {
+	background-color: #d8d9de;
+}
+
+.banner {
+	height: 110px; /*css有三大特效：层叠性，继承性(height这种属性不能继承),优先性(不同选择器有不同权重),
+	               这里会把上面的height: 100px覆盖掉， 体现了层叠性;*/
+	background-color: skyblue;
+}
+
+.main {
+	height: 600px; /*盒子的高度没有继承性，所以子元素必须声明*/
+	background-color: #eee;
+}
+
+.left {
+	height: 596px;
+	background-color: #abc;
+	width: 475px; /*(960/2 - 10(margin-right))/2*/
+	float: left; /*float会脱离标准流，浮动了起来，不占位置。目的是为了把div放到一行内显示，不独占，相当于可以把block元素
+				 转换成了inline-block元素，这也是它的一个特别用途。浮动的时候是在父容器中浮动，不会飘到其他地方去。 
+				 这里的父容器是main，main是标准流，独占一行，所以虽然left和right都浮动起来了，下面的footer也无法跑上去，
+				 如果外面没有main父容器这标准流元素，那么当left和right浮动的时候，footer元素会跑上去了，可以试试看*/
+	margin-right: 10px;
+	padding: 2px 0px; /*盒子的真正宽度/高度大小 = 盒子width/height(相当于内容所在的区域大小) + border大小 + padding大小。
+						上下padding是2px，盒子本身高度是600px，所以600 - 2*2 = 596px为盒子width
+						*/
+}
+
+
+.right {
+	height: 600px;
+	background-color: #ddc;
+	width: 475px;
+	float: left;
+}
+
+.footer {
+	background-color: #acacac;
+}

@@ -3,6 +3,7 @@ body {
 }
 
 /*原始版*/
+/*第一步是先要确定核心内容的宽度，叫做版心，这里是main class div，然后再围绕版心布局*/
 /*.nav {
 	width: 960px;
 	height: 100px;
@@ -38,7 +39,7 @@ body {
 .main,
 .footer {
 	width: 960px;
-	margin: 0 auto; 
+	margin: 5px auto; 
 	height: 100px;
 }
 
