@@ -1,0 +1,121 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+.nav {
+	width: 1036px; /*-200*/
+	height: 100px;
+	margin: auto;
+}
+
+.logo{
+	float: left;
+}
+
+.menu {
+	float: left;
+}
+
+.menu ul {
+	margin-left: 50px;
+}
+
+.menu li {
+	float: left;
+	height: 100px;
+	line-height: 100px; /*写在父容器也可以，因为line-height可以继承*/
+	margin-left: 60px;
+}
+
+.menu li a {
+	text-decoration: none;
+	color: #000;
+	font:14px '\5FAE\8F6F\96C5\9ED1',Simsun,arial,sans-serif;  /*\5FAE\8F6F\96C5\9ED1：微软雅黑unicode编码，
+																unicode编码的好处是每种浏览器都能识别，而中文或者英文
+																有可能浏览器无法识别*/
+}
+
+.menu li a:hover {
+	color: #52a0eb;
+}
+
+.banner {
+	height: 320px;
+	background-color: #eee;
+	background: url(../images/banner.png) no-repeat top center;
+}
+
+.ourservice > p {
+	width: 765px;
+	height: 75px;
+	margin: 30px auto 0;
+	text-align: center;
+	padding: 30px 20px 0;
+	border-top: 1px solid #ccc;
+	font:14px '\5FAE\8F6F\96C5\9ED1',Simsun,arial,sans-serif;
+}
+
+.service-item {
+	width: 855px;
+	/*background-color: skyblue;*/
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.service-item li {
+	width: 250px;
+	height: 350px;
+	margin-left: 26px;
+	float: left;
+	border: 1px solid #ccc;
+}
+
+.service-item li div {
+	margin: 20px auto;
+/*	border: 1px solid blue;*/
+	width:200px; 
+	height:100px;
+	background: url(../images/service1.png) no-repeat;
+}
+
+.service-item li h4 {
+	/*border: 1px solid blue;*/
+	margin: 0 auto 20px;
+	width: 250px;
+	text-align: center;
+	font:bold 14px '\5FAE\8F6F\96C5\9ED1',Simsun,arial,sans-serif;  
+}
+
+.service-item li > p {
+	/*border: 1px solid red;*/
+	/*line-height: 370px; 不起作用 ？*/ 
+	width: 250px;
+	text-align: center;
+	font:14px '\5FAE\8F6F\96C5\9ED1',Simsun,arial,sans-serif;  
+}
+
+.service-item li > a {
+	display: block;
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	margin: 20px auto 0;
+	text-decoration: none;
+	border: 1px solid #ff9412;
+	color: #ff9412;
+	border-radius: 5px;
+/*	font-size: 14px;
+	font-family: '\5FAE\8F6F\96C5\9ED1';*/
+	font:14px/40px '\5FAE\8F6F\96C5\9ED1',Simsun,arial,sans-serif;   /*注意40px是line-height， 如果没有设置这个会影响垂直居中布局*/ 
+}
+
+.service-item li > a:hover {
+	background-color: #ff9412;
+	color: #fff;
+}

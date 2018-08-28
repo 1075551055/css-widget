@@ -7,7 +7,8 @@ body {
 /*.nav {
 	width: 960px;
 	height: 100px;
-	margin: 0 auto;  盒子水平居中，auto代表自动填满，只对左右有用，这里相当于左右填满，则div给压到了水平中间位置, margin:auto也可以
+	margin: 0 auto;  盒子水平居中，外边距auto代表自动填满，只对左右有用，这里相当于左右填满，则div给压到了水平中间位置,
+					 margin:auto也可以. 不过得符合两个条件：1.是块元素， 2. 有宽度
 	background-color: #d8d9de;
 }
 
