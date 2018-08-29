@@ -1,0 +1,58 @@
+/*
+定位，有三种模式以及四种边偏移，模式和边偏移要一起使用才能起到定位的作用：
+1. static(静态)：默认就是静态定位，标准流，正常模式，使用边偏移(left, right, top, bottom)无效;但是这个定位有一个
+   作用，使用它就相当于清除了定位，回到了标准流模式；
+
+2. relative(相对定位)：相对自己本身的位置进行定位的，假如盒子本来就设置了margin,那么就是在margin之后的位置作为参照点
+   再进行定位。特点：脱离标准流，并不是实际上完全脱离，会占有原来的位置，漂浮在其他标准流元素上面；
+
+3. absolute(绝对定位):特点：不保留位置，真正的脱离标准流；没有父级元素或者父级元素没有定位，以当前浏览器窗口(屏幕)为准；
+	如果父级(包括爷爷...)元素有定位，则以最近的父级元素的左上角为准;
+
+4. fixed(固定定位): 特点：不保留位置，真正的脱离标准流；以当前浏览器窗口(屏幕)为准;
+
+边偏移：left, right, top, bottom.
+
+定位布局常用法则：子绝父相。 就是说子元素用绝对定位，父容器用相对定位。为什么呢？首先子元素，假如不用绝对定位，而是用相对定位，
+那么由于相对定位是占有位置的，就相当于div一样一行一行显示了，布局麻烦，假如父容器不使用相对定位，而是使用绝对定位，由于
+绝对定位不占有位置，那么出现跟父容器同级别的兄弟元素的时候，就会出现兄弟元素跑上/下去与父容器重叠在一起了。
+
+模式转换：使用relative，absolute，fixed定位后，相当于将盒子隐式转换成了inline-block元素。
+*/
+
+.relative-test {
+	height: 300px;
+	width: 300px;
+	border: 1px solid red;
+	position: relative;
+	margin-left: 20px;
+	left: 50px; /*相对窗口左边偏移了70px, 因为本身margin-left是20px,在这个基础上再偏移左边50px;*/
+	top: 50px;
+}
+
+.absolute-son {
+	height: 300px;
+	width: 300px;
+	border: 1px solid red;
+	position: absolute;
+	left: 50px; 
+	top: 50px;
+}
+
+.absolute-father {
+	height: 300px;
+	width: 300px;
+	border: 1px solid red;
+	position: absolute;
+	left: 10px; 
+	top: 10px;
+}
+
+.fixed-test {
+	height: 300px;
+	width: 300px;
+	border: 1px solid red;
+	position: absolute;
+	right: 0; 
+	bottom: 0; /*屏幕右下角，就算有滚动条也只在右下角*/
+}
