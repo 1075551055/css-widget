@@ -64,7 +64,13 @@ li {
 	width: 855px;
 	/*background-color: skyblue;*/
 	margin: 0 auto;
-	overflow: hidden;
+	overflow: hidden; /*这是清除浮动的方式之一。为什么需要清除浮动？试想一下一个父div包裹着几个子div，如果子div都浮动了，
+						意味着漂浮了起来，不占位置，假如父div没有设置高度，这时候父div就无法随着子div的高度而扩大了，
+						因为子div已经浮起来了并且不占任何位置。要解决这个问题就需要清除浮动。
+						清除浮动有常用的几种方式：
+						1. 父容器加overflow: hidden；
+						2. 在最后一个浮动的子元素后面加上一个空的div，然后给这个div加上一个class,class的样式是clear:both(
+						   缺点就是多了个空的div，增加了文档的结构复杂度)*/
 }
 
 .service-item li {
@@ -96,7 +102,7 @@ li {
 	line-height: 20px; /*注意font中也有line-height,记得设置，否则这里怎么设置值都不起作用，就是font样式在搞怪*/
 	width: 250px;
 	text-align: center;
-	font:14px/20px '\5FAE\8F6F\96C5\9ED1',Simsun,arial,sans-serif;  
+	font:14px/20px '\5FAE\8F6F\96C5\9ED1',Simsun,arial,sans-serif;  /*20px是line-height*/
 }
 
 .service-item li > a {
