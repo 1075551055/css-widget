@@ -1,0 +1,19 @@
+.father {
+	position: relative;
+	width: 400px;
+	height: 400px;
+	border: 1px solid red;
+}
+
+.son {
+	width: 40px;
+	height: 40px;
+	border: 1px solid blue;
+	position: absolute;
+	left: 50%;
+	margin-left: -20px; /*水平居中对齐，首先left:50%(父容器宽度的一半)，这个时候son左边框刚好在father的50%处，
+						并没有完全水平居中，接着以这个基础为参照点让son左移自己宽度的一半40px/2=20px，参照点
+						为为原点(0,0),再左移就是负数，所以是-20px; 垂直居中同理.*/
+    top: 50%;
+    margin-top: -20px;
+}
