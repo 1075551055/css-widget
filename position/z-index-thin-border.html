@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>z-index实现重叠盒子细边框</title>
+	<link rel="stylesheet" href="">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			margin: 20px;
+		}
+
+		li {
+			width: 100px;
+			height: 100px;
+			border: 1px solid red;
+			float: left;
+			list-style: none;
+			position: relative;
+			float: left;
+			margin-left: -1px; /*可以实现细边框，因为这样元素的左边框能把左边的兄弟的右边框给覆盖掉了，但是有个缺点：如果是鼠标放上去要显示边框的话，有些元素的右边框会显示不出来. 使用z-index可以解决该问题*/
+		}
+
+		li:hover {
+			border: 1px solid skyblue;
+			z-index: 1;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>z-index</title>
+	<style>
+		.top,
+		.medium,
+		.bottom {
+			width: 80px;
+			height: 80px;
+			background-color: blue;
+		}
+
+		.top{
+			position: absolute; /*只有使用定位的元素才有z-index可言，默认是0*/
+			top:50px;
+			left: 50px;
+			z-index: 2;
+		}
+
+		.medium{
+			position: absolute; /*只有使用定位的元素才有z-index可言，默认是0*/
+			top:100px;
+			left: 100px;
+			background-color: skyblue;
+			z-index: 1;
+		}
+
+		.bottom{
+			position: absolute; /*只有使用定位的元素才有z-index可言，默认是0*/
+			top:150px;
+			left: 150px;
+			background-color: #000;
+		}
+	</style>
+<body>
+	<div class="top">最上层</div>
+	<div class="medium">中间层</div>
+	<div class="bottom">底层</div>
+
+</body>
+</html>
