@@ -1,0 +1,42 @@
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.carousel {
+	position: relative; /*子相父绝*/
+	width: 1180px;
+	height: 500px;
+}
+
+.carousel img {
+	width: 1180px;
+	height: 500px;
+}
+
+.carousel ul {
+	position: absolute; /*子相父绝*/
+	bottom: 0;
+	left: 50%;
+	margin-left: -60px;
+	margin-bottom: 10px;
+}
+
+.carousel li {
+	float: left;
+	margin-left: 10px;
+	list-style: none;
+}
+
+.carousel li a {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	background-color: skyblue;
+	border-radius: 50%;
+}
+
+.carousel li a:hover {
+	background-color: #fff;
+}
