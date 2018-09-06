@@ -1,0 +1,32 @@
+
+.father {
+	position: relative;
+}
+
+.video,
+.shade {
+	width: 480px;
+	height: 256px;
+}
+
+.video {
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: url(../images/guanlangaoshou.jpg);
+}
+
+.shade {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: inline-block;
+/*	background-color: rgba(0, 0, 0, 0.5);*/
+	background: url(../images/playbtn.png) no-repeat center rgba(0, 0, 0, 0.5);
+	display: none; /*隐藏*/
+}
+
+a:hover div {
+	display: block;/*显示*/
+	cursor: pointer;
+}
