@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>vertical-align的运用</title>
+	<link rel="stylesheet" href="">
+	<style>
+		img {
+			/*vertical-align: middle;*/ /*这个属性一般是用来控制图片，表单元素与文字的垂直对齐方式， 默认是文字的基线与图片的底部对齐(这种情况可以看到father div底部有一条裂缝，就是因为对齐的是基线而不是文字最底部，写成vertical-align:bottom/top/middle就能避免该问题)。 top表示与文字的顶部对齐，middle表示与文字的中线(最高的文字与最低的文字中间)对齐*/
+		}
+
+		.father{
+			border: 1px solid red;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<img src="images/guanlangaoshou.jpg" alt="">
+		<!-- 我是个兵，来自老百姓 -->
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>overflow：文字超出部分显示省略号</title>
+	<link rel="stylesheet" href="">
+
+	<style>
+		li {
+			width: 200px;
+			height: 30px;
+			border: 1px solid red;
+			white-space: nowrap; /*禁止换行*/ 
+			overflow: hidden; /*超出部分隐藏掉*/
+			text-overflow: ellipsis; /*超出部分显示省略号*/
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>
+			12345678901234567890123
+			4567890
+		</li>
+	</ul>
+</body>
+</html>
