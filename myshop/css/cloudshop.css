@@ -3,10 +3,41 @@
 	padding: 0;
 }
 
+body {
+	background-color: #fafafa;
+}
+
 li {
 	list-style: none;
 }
 
+a {
+	text-decoration: none;
+}
+
+.clearfix:after { /*::after伪元素，不是伪类选择器，最后渲染出来的其实是一个盒子。
+
+					:after/::after和:before/::before的区别：
+					1.他们都是CSS伪元素，与:hover/:active等伪类不一样。
+					2.:before/:after伪元素是在CSS2中提出来的，所以兼容性可能到IE8了。
+					3.::before/::after是CSS3中的写法，为了将伪类和伪元素区分开。但是平时为了兼容性，
+					  还是会用一个冒号的写法*/;
+	content: "";
+	display: block; /*必须写*/
+	height: 0;
+	width: 0;
+	visibility: hidden;
+	clear: both;
+}
+
+.clearfix {
+	zoom: 1; /* IE < 8 */
+}
+
+.w {  /*版心*/
+	width: 855px;
+	margin: auto;
+}
 .nav {
 	width: 1036px; /*-200*/
 	height: 100px;
@@ -33,7 +64,6 @@ li {
 }
 
 .menu li a {
-	text-decoration: none;
 	color: #000;
 	font:14px '\5FAE\8F6F\96C5\9ED1',Simsun,arial,sans-serif;  /*\5FAE\8F6F\96C5\9ED1：微软雅黑unicode编码，
 																unicode编码的好处是每种浏览器都能识别，而中文或者英文
@@ -50,7 +80,14 @@ li {
 	background: url(../images/banner.png) no-repeat top center;
 }
 
-.ourservice > p {
+.head,
+.ourservice {
+	background-color: #fafafa;
+}
+
+.ourservice > p,
+.case > p,
+.media-partner > p {
 	width: 765px;
 	height: 75px;
 	margin: 30px auto 0;
@@ -61,9 +98,9 @@ li {
 }
 
 .service-item {
-	width: 855px;
+	/*width: 855px;*/
 	/*background-color: skyblue;*/
-	margin: 0 auto;
+	/*margin: 0 auto;*/
 	overflow: hidden; /*这是清除浮动的方式之一。为什么需要清除浮动？试想一下一个父div包裹着几个子div，如果子div都浮动了，
 						意味着漂浮了起来，不占位置，假如父div没有设置高度，这时候父div就无法随着子div的高度而扩大了，
 						因为子div已经浮起来了并且不占任何位置。要解决这个问题就需要清除浮动。
@@ -73,10 +110,11 @@ li {
 						   缺点就是多了个空的div，增加了文档的结构复杂度)*/
 }
 
-.service-item li {
+.service-item li,
+.case li {
 	width: 250px;
 	height: 350px;
-	margin-left: 26px;
+	margin-left: 25px;
 	float: left;
 	border: 1px solid #ccc;
 }
@@ -124,4 +162,133 @@ li {
 .service-item li > a:hover {
 	background-color: #ff9412;
 	color: #fff;
+}
+
+.case {
+	margin-top: 30px;
+}
+
+.case-item-father {
+	position: relative;
+}
+
+.case li {
+	height: 160px;
+	border: 0;
+}
+
+.case-left-a,
+.case-right-a {
+	width: 20px;
+	height: 25px;
+	display: inline-block;
+	line-height: 20px;
+	text-align: center;
+	position: absolute;
+	margin-top: -10px;
+	border-radius: 50%;
+	background-color: #e6e6e6;
+	color: #fff;
+}
+
+.case-left-a {
+	top: 50%;
+	left: 0;
+}
+
+.case-right-a {
+	top: 50%;
+	right: 0;
+}
+
+.case li {
+	position: relative;
+}
+
+.case-item-father li a {
+	display: inline-block;
+	width: 250px;
+	height: 160px;
+	background: url(../images/case.png) no-repeat;
+}
+
+.mask {
+	width: 100%;
+	height: 100%;
+	background-color: red;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+.case-item-bottom {
+	width: 250px;
+	height: 25px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: #fff;
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0.3);
+	font:14px/25px '\5FAE\8F6F\96C5\9ED1',Simsun,arial,sans-serif; 
+	
+}
+
+.case li:hover .mask {
+	display: block;
+}
+
+.media-partner {
+	height: 450px;	
+	margin-top: 30px;
+}
+
+.media-partner ul {
+	margin-left: 35px;
+	width: 796px;
+}
+.media-partner li {
+	float: left;
+	width: 198px;
+	height: 55px;
+	border-bottom: 1px dashed #cacaca;
+	border-right: 1px dashed #cacaca;
+	text-align: center;
+}
+
+.split {
+	width: 795px;
+	height: 166px;
+	overflow: hidden;
+}
+
+.footer {
+	height: 150px;
+	background-color: #000;
+	color: #fff;
+	text-align: center;
+}
+
+.footer ul {
+	display: inline-block; /*如何是一个inline的盒子嵌套一个inline的盒子，使用margin-top会出现垂直外边距塌陷问题。
+							这里转换成了inline-block了所以没有这问题*/
+	margin-top: 40px;
+}
+
+.footer li,
+.footer span {
+	margin-right: 15px;
+}
+
+.footer span,
+.footer li {
+	float: left;
+	font: 14px arial
+}
+
+.footer p {
+	margin-top: 20px;
+	font: 12px arial
 }
