@@ -1,0 +1,280 @@
+
+/*本地方式. 阿里iconfont字体图标. 字体图标相对图片的优点是体积小，所以耗流量小*/
+@font-face {font-family: 'iconfont';
+    src: url('../fonts/iconfont.eot');
+    src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/iconfont.woff') format('woff'),
+    url('../fonts/iconfont.ttf') format('truetype'),
+    url('../fonts/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #fff;
+	font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,sans-serif;
+	color: #666;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+/*版心*/
+.w {
+	width: 1190px;
+	margin: 0 auto;
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+.index {
+	background-color: #f0f3ef;
+}
+
+.top {
+	background-color: #ffcb00;
+}
+
+.top-a {
+	height: 80px;
+	width: 100%;
+	display: inline-block;
+	background: url(../images/header.jpg) no-repeat;
+}
+
+.shortcut {
+	background-color: #e3e4e5;
+	border-bottom: 1px solid #ddd;
+	height: 30px;
+}
+
+.shortcut .w {
+	line-height: 30px;
+	height: 30px; /*子元素加了height之后，会撑大父元素，所以这种方法就不需要父元素清除浮动了*/
+	color: #999;
+}
+
+.shortcut .mycity {
+	margin-left: 200px;
+	width: 58px;
+	height: 30px;
+	text-align: center;
+}
+
+.shortcut li {
+	float: left;
+	margin-right: 8px;
+}
+
+.spacer {
+	height: 10px;
+	width: 1px;
+	background-color: #ccc;
+	margin: 11px 8px 0 0;
+	overflow: hidden;
+}
+
+.header .w {
+	height: 140px; /*子元素加了height之后，会撑大父元素*/
+	position: relative;
+}
+
+#logo {
+	width: 190px;
+	height: 170px;
+	position: absolute;
+	top: -31px;
+	left: 0;
+}
+
+.logo h1 {
+	margin: 0;
+}
+
+.logo a {
+	width: 190px;
+	height: 170px;
+	display: inline-block;
+	background: url(../images/sprite.head.png) no-repeat top left;
+	overflow: hidden;
+	text-indent: -99999px; /*为了把字体隐藏掉*/
+}
+
+.search {
+	width: 550px;
+	height: 35px;
+	position: absolute;
+	left: 320px;
+	top:25px;
+	/*border: 1px solid red;*/
+}
+
+.search .text {
+	outline: none;
+	height: 25px;
+	line-height: 25px;
+	width: 450px;
+	padding: 4px 44px 4px 4px;
+	border: 1px solid transparent;
+	color: #989898;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.search .photo-search-btn {
+	position: absolute;
+	width: 19px;
+	height: 15px;
+	right: 65px;
+	top:10px;
+	line-height: 15px;
+}
+
+.search .search-button {
+	width: 50px;
+	height: 35px;
+	background-color: #f10215;
+	position: absolute;
+	right: 0;
+	top: 0;
+	outline: none;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+}
+
+.shopcar {
+	/*border: 1px solid red;*/
+	width: 190px;
+	height: 35px;
+	line-height: 35px;
+	display: inline-block;
+	position: absolute;
+	right: 99px;
+	top: 25px;
+	text-align: center;
+	background-color: #fff;
+	border: 1px solid #e3e4e5;
+}
+
+.shopcar .cw-icon {
+	width: 16px;
+	height: 16px;
+	font-size: 16px;
+	color: #f10214;
+}
+
+.shopcar a {
+	color: #f10214;
+}
+
+.shopcar em {
+	font-style: normal;
+	width: 14px;
+	height: 14px;
+	line-height: 14px;
+	display: inline-block;
+	position: absolute;
+	left: 140px;
+	top: 5px;
+	background-color: #f10215;
+	color: #fff;
+	border-radius: 50%;
+}
+
+.hotwords {
+	/*border: 1px solid red;*/
+	width: 550px;
+	height: 20px;
+	line-height: 20px;
+	position: absolute;
+	left: 320px;
+	top: 65px;
+}
+
+.hotwords a {
+	float: left;
+	margin-right: 10px;
+	color: #999;
+	white-space: nowrap; /*禁止换行*/
+}
+
+.hotwords .style-red {
+	color: #f10215;
+	width: 70px;
+	overflow: hidden;
+	text-overflow: ellipsis; /*white-space + overflow + text-overflow 显示省略号, 尝试把“iphone新品”内容加多就能看到效果*/
+}
+
+.navitems {
+	/*border: 1px solid red;*/
+	overflow: hidden;
+	position: absolute;
+	left: 200px;
+	bottom: 0;
+	padding-top: 20px;
+	width: 790px;
+	height: 40px;
+}
+
+.navitems ul {
+	height: 40px;
+}
+
+.navitems li {
+	float: left;
+	margin-left: 30px;
+}
+
+.navitems a {
+	position: relative;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	color: #333;
+}
+
+div.spacer {
+	float: left;
+	margin-left: 20px;
+	margin-top: 15px;
+	margin-right: -10px; /*相当于在原来的基础上-10px;*/
+}
+
+.treasure {
+	width: 190px;
+	height: 40px;
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+
+}
+
+.treasure a {
+	display: inline-block;
+	width: 190px;
+	height: 40px;
+	background: url(../images/treasure.png) no-repeat;
+}
