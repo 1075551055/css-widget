@@ -1,0 +1,76 @@
+.fs {
+	position: relative;
+}
+
+.fs-inner {
+	height: 480px;
+	width: 1190px;
+	margin: auto;
+}
+
+.fs_col2 {
+	position: relative;
+	margin-left: 200px;
+	width: 590px;
+	height: 480px;
+	overflow: hidden; /*目的是为了让底下的li中的轮播图超出部分给隐藏起来*/
+	border: 1px solid red;
+}
+
+/*.lunbo {
+
+}*/
+
+.fs_col2 ul {
+	width: 1000%; /*设置得足够大才能让底下的li横向分布，否则li会因为父元素的宽度不够而被往下挤*/
+	height: 470px;
+	/*overflow: hidden;*/
+}
+
+.fs_col2 li {
+	float: left;
+	list-style: none;
+}
+
+div.lunbo_left,
+div.lunbo_right {
+	width: 24px;
+	height: 40px;
+/*	border: 1px solid black;*/
+	position: absolute;
+	background-color: rgba(0,0,0,.2);
+}
+
+div.lunbo_left {
+	left: 0;
+	top: 50%;
+	margin-top: -20px; /*自身高度的一半，居中*/
+}
+
+div.lunbo_right {
+	right: 0;
+	top: 50%;
+	margin-top: -20px; /*自身高度的一半，居中*/
+}
+
+div.lunbo_left a,
+div.lunbo_right a{
+	display: inline-block;
+	width: 24px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #fff;
+}
+
+.slider_indicators {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.slider_indicators i {
+	cursor: pointer;
+	border-radius: 50%;
+}
