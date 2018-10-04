@@ -25,6 +25,8 @@
 	width: 1000%; /*设置得足够大才能让底下的li横向分布，否则li会因为父元素的宽度不够而被往下挤*/
 	height: 470px;
 	/*overflow: hidden;*/
+	position: absolute;
+
 }
 
 .fs_col2 li {
@@ -39,6 +41,7 @@ div.lunbo_right {
 /*	border: 1px solid black;*/
 	position: absolute;
 	background-color: rgba(0,0,0,.2);
+	z-index: 1; /*不设置z-index的话，lunbo_left元素会被ul盖着，那么就看不到lunbo_left元素了，必须让它在ul上面*/
 }
 
 div.lunbo_left {
