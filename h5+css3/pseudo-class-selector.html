@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>伪类选择器</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		/* 1.查找li标签的父元素的第一个子li元素,如果第一个元素不是li则查找不到，first-of-type则没有这种问题 */
+		li:first-child {
+			color: red;
+		}
+		/* 2.查找li标签的父元素的最后一个子li元素，如果最后一个元素不是li则查找不到，last-of-type则没有这种问题  */
+		li:last-child {
+			font-size: 20px;
+		}
+		/* 3.查找li标签的父元素的第一个类型为li的元素，会过滤掉其他类型 */
+		li:first-of-type {
+			color: red;
+		}
+
+		/* 4.查找li标签的父元素的最后一个类型为li的元素，会过滤掉其他类型 */
+		li:last-of-type {
+			font-size: 20px;
+		}
+
+		/*指定索引位置 nth-child(从1开始的索引||关键字||表达式)*/
+		/* 5.通过索引查找，索引从1开始 */
+		li:nth-child(5) {
+			background-color: #ccc;
+		}
+		/* 6.通过索引查找，偶数行. odd是奇数行*/
+		li:nth-child(even) {
+			background-color: #bbb;
+		}
+		/* 7.通过索引查找，n从0开始，所以这里获取的是前面两个类型为li的元素，当括号里面的总和<=0时，选取无效*/
+		li:nth-of-type(-n+2){
+			text-decoration: underline;
+		}
+		/* 8.从li的父元素中的后面开始查找 */
+		li:nth-last-of-type(-n+2){
+			text-decoration: underline;
+		}
+
+		/*9.空值:没有任何的内容，连空格都没有*/
+        li:empty{
+            background-color: red;
+        }
+
+	</style>
+</head>
+<body>
+	<ul>
+		<div>
+			first
+		</div>
+		<li>li 1</li>
+		<li>li 2</li>
+		<li>li 3</li>
+		<li></li>
+		<li>li 5</li>
+		<li>li 6</li>
+		<span>last</span>
+	</ul>
+
+	<ul>
+		<div>
+			first
+		</div>
+		<li>li 1</li>
+		<li>li 2</li>
+		<li>li 3</li>
+		<li>li 4</li>
+		<li>li 5</li>
+		<li>li 6</li>
+		<span>last</span>
+	</ul>
+</body>
+</html>

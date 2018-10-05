@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>属性选择器</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		/*1. 查找拥有style属性的li标签*/
+		li[style] {
+			font-size: 30px;
+		}
+		/*2.查找class属性等于myblue的li标签*/
+		li[class=myblue] {
+			text-decoration: underline;
+		}
+		/*3.查找class属性中含有class字样的li标签*/
+		li[class*=class] {
+			color: rgba(0,0,0, .5);
+		}
+		/*4.查找class属性以my字样开头的li标签*/
+		li[class^=my] {
+			color: red;
+		}
+
+		/*4.查找class属性以my字样结尾的li标签*/
+		li[class$=blue] {
+			font-style: italic;
+		}
+
+	</style>
+</head>
+<body>
+	<ol>
+		<li class="myclass" style="">maven-surefire-plugin会按照如下逻辑去寻找JUnit的版本并执行测试用例</li>
+		<li class="yourclass" style="">如果你明确用的是JUnit4.7及以上版本，可以明确声明</li>
+		<li class="red">JUnit4.0(含)到JUnit4.7(不含)的版本，这样声明</li>
+		<li class="myblue">如果说maven已经有了maven-surefire-plugin的默认配置</li>
+		<li class="green">虽说maven-surefire-plugin有默认配置</li>
+	</ol>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>兄弟选择器</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+	    /*+ 表示查找span相邻的兄弟元素：li标签*/
+		span + li {
+			color: red;
+		}
+		/*~ 表示查找span的所有兄弟元素：li标签，不管是否相邻*/
+		span ~ li {
+			font-style: italic;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<span>span标签</span>
+		<li>li 1</li>
+		<li>li 2</li>
+		<li>li 3</li>
+		<li>li 4</li>
+	</ul>
+</body>
+</html>
