@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>伪元素-before & after</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		/*本地方式. 阿里iconfont字体图标. 字体图标相对图片的优点是体积小，所以耗流量小*/
+		@font-face {font-family: 'iconfont';
+		    src: url('fonts/iconfont.eot');
+		    src: url('fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+		    url('fonts/iconfont.woff') format('woff'),
+		    url('fonts/iconfont.ttf') format('truetype'),
+		    url('fonts/iconfont.svg#iconfont') format('svg');
+		}
+		.iconfont{
+		    font-family:"iconfont" !important;
+		    font-size:16px;font-style:normal;
+		    -webkit-font-smoothing: antialiased;
+		    -webkit-text-stroke-width: 0.2px;
+		    -moz-osx-font-smoothing: grayscale;
+		}
+	
+
+		/* ::before表示在div容器中的最前面位置，通过content来生成一个你想要的内容; 默认生成的是inline元素，想设置宽高，可以转换成block */
+		div::before {
+			/* 必写，否则无法渲染.*/
+			content: "test";
+			border: 1px solid red;
+			display: block;
+			height: 50px;
+			line-height: 50px;
+			width: 50px;
+			text-align: center;
+		}
+		/* ::after表示在div容器中的最后面位置 */
+		div::after {
+			/* 应用iconfont图标，其中&#是开头用以标明这是字符实体，x表示这是十六进制，所以先把这三个字符去掉，然后加上转义字符\ ,并且记得加上font-family的声明，否则不起作用*/
+			font-family:"iconfont";
+			content: "\e600";
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		1
+	</div>
+</body>
+</html>
