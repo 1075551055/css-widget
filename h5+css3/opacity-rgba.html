@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>opacity和rgba透明度对比</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		.opacity {
+			/* 通过opacity设置父容器的透明度，那么其子元素也会跟着透明，会继承 */
+			opacity: 0.5;
+		}
+
+		.rgba {
+			/* a是透明度的意思，通过这种方法设置的透明度，子元素是不受影响的，即不会继承 */
+			background-color: rgba(0, 0, 0, 0.3);
+		}
+	</style>
+</head>
+<body>
+	<div class="opacity">
+		<p>我是个兵</p>
+	</div>
+
+	<div class="rgba">
+		<p>我还是个兵</p>
+	</div>
+</body>
+</html>

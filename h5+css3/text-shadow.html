@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>text-shadow</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		div {
+            width: 600px;
+            padding: 30px;
+            background-color: #666;
+            margin:20px auto;
+            text-align: center;
+            font:bold 20px/100% "微软雅黑";
+            color: #fff;
+		}
+		/* 第1个长度值用来设置对象的阴影水平偏移值。可以为负值
+		第2个长度值用来设置对象的阴影垂直偏移值。可以为负值
+		如果提供了第3个长度值则用来设置对象的阴影模糊值。不允许负值
+		最后一个参数是设置对象的阴影的颜色。 */
+		.shadow1 {
+			text-shadow: -1px -1px 2px red;
+		}
+
+		.shadow2 {
+			text-shadow: 0 0 30px #fff;
+		}
+		/* 通过逗号设置多组值，多层阴影效果 */
+		.shadow3 {
+			text-shadow: 0px 0px 30px #fff,0 0 50px red,0px 0px 70px #fff;
+		}
+
+		/* 通过逗号设置多组值，多层阴影效果 */
+		.shadow4 {
+			text-shadow: 0px 0px 0px #fff, 1px 1px 0px #000;
+		}
+
+		.shadow5 {
+			color: transparent;
+            text-shadow: 0px 0px 8px hsla(30,100%,30%,1);
+		}
+	</style>
+</head>
+<body>
+	<div class="shadow1">我是个兵</div>
+	<div class="shadow2">我是个兵</div>
+	<div class="shadow3">我是个兵</div>
+	<div class="shadow4">我是个兵</div>
+	<div class="shadow5">我是个兵</div>
+</body>
+</html>

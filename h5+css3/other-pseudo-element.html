@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>其他伪元素</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		/*获取第一个字符*/
+		p::first-letter {
+			color: red;
+			font-size: 40px;
+			float: left; /* 实现首字下沉图片的文本环绕效果也可以通过这样实现 */
+		}
+		/* 获取第一行 */
+		p::first-line {
+			font-style: italic;
+		}
+		/* 获取选取的文字，背景颜色变成pink */
+		p::selection {
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+	<p>
+		static void setFinalStatic(Field field, Object newValue) throws Exception {
+        field.setAccessible(true);        
+        Field modifiersField = Field.class.getDeclaredField("modifiers");
+        modifiersField.setAccessible(true);
+        modifiersField.setInt(field, field.getModifiers() & ~Modifier.FINAL);
+        field.set(null, newValue);
+    }
+</p>
+</body>
+</html>

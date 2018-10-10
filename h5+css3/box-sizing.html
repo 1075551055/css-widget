@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>css3盒子模型</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		.parent {
+			width: 400px;
+			height: 200px;
+			border: 1px solid red;
+		}
+
+		.child {
+			float: left;
+			width: 200px;
+			height: 200px;
+			border: 1px solid blue;
+			/* css3盒子模型分为两种：1.border-box,一旦定义成该类型，元素设置的宽度width就是“内容宽度+padding+border"的总和；2.content-box,该类型就是默认的，元素设置的宽度width则只是内容的宽带，并不包括padding和border */
+			box-sizing: border-box; /* 这样child盒子就不会溢出了，可以去掉试试效果 */
+		}
+	</style>
+</head>
+<body>
+	<div class="parent">
+		<div class="child">我200px</div>
+		<div class="child">我也是200px</div>
+	</div>
+</body>
+</html>
