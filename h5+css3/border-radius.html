@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>border-radius圆角设置</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		div {
+			width: 200px;
+            /*height: 200px;*/
+            height: 100px;
+            background-color: red;
+            margin: 100px auto;
+
+			/*添加边框圆角*/
+            /*1.设置一个值：四个角的圆角值都一样*/
+            /*border-radius: 10px;*/
+            /*2.设置两个值:第一个值控制左上/右下，第二个值控制右上/左下*/
+            /*border-radius: 10px 30px;*/
+            /*3.设置三个值：第一个值控制左上，第二值控制右上/左下，第三个值控制右下*/
+            /*border-radius: 10px 40px 60px;*/
+            /*4.设置四个值：左上  右上 右下 左下*/
+            /*border-radius: 10px 30px 60px 100px;*/
+
+            /* 100px是水平方向的值，如果只有一个则表示四个角都是这个值，从左上角顺时针开始，50px是垂直方向的值，两者都是宽高一半，so刚好是个椭圆。 假如没有/后面的值，默认水平垂直方向都是使用同一个值 */
+            border-radius: 100px/50px;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>
