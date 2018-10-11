@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>box-shadow 边框阴影</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+	.test li {
+		margin-top: 20px;
+		list-style: none;
+		width: 400px;
+		padding: 10px;
+		background: #eee;
+	}
+
+	/* 
+	<length>①：
+    	第1个长度值用来设置对象的阴影水平偏移值。可以为负值
+	<length>②：
+	    第2个长度值用来设置对象的阴影垂直偏移值。可以为负值
+	<length>③：
+	    如果提供了第3个长度值则用来设置对象的阴影模糊值。不允许负值
+	<length>④：
+	    如果提供了第4个长度值则用来设置对象的阴影外延值(向外扩张)。可以为负值
+	<color>：
+	    设置对象的阴影的颜色。
+	inset：
+    	设置对象的阴影类型为内阴影。该值为空时，则对象的阴影类型为外阴影 */
+	.test .outset {
+		box-shadow: 5px 5px rgba(0, 0, 0, 0.6);
+	}
+
+	.test .outset-blur {
+		box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+	}
+
+	.test .outset-extension {
+		box-shadow: 5px 5px 5px 10px rgba(0, 0, 0, 0.6);
+	}
+
+	.test .inset {
+		box-shadow: 2px 2px 5px 1px rgba(0,0,0,.6) inset;
+	}
+
+	/* 多层阴影效果 */
+	.test .multiple-shadow {
+		box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 1.0);
+		/* rgb: r->red,g->green,b->blue, 想哪个颜色为主导颜色就让哪个值是最大的，例如这里r=255 > g=128, 所以红色为主导颜色 */
+		box-shadow: 0px 0px 5px 5px rgba(255, 128, 0, 1.0);
+	}
+</style>
+</head>
+<body>
+	<ul class="test">
+		<li class="outset">外阴影常规效果<br />box-shadow:5px 5px rgba(0,0,0,.6);</li>
+		<li class="outset-blur">外阴影模糊效果<br />box-shadow:5px 5px 5px rgba(0,0,0,.6);</li>
+		<li class="outset-extension">外阴影模糊外延效果<br />box-shadow:5px 5px 5px 10px rgba(0,0,0,.6);</li>
+		<li class="inset">内阴影效果<br />box-shadow:2px 2px 5px 1px rgba(0,0,0,.6) inset;</li>
+		<li class="multiple-shadow">外阴影模糊效果<br />box-shadow:5px 5px 5px rgba(0,0,0,.6);</li>
+	</body>
+	</html>
