@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>linear-gradient</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+	div {
+		width: 200px;
+		height: 100px;
+		margin-top: 10px;
+		border: 1px solid #ddd;
+	}
+
+
+	/* 语法：
+
+	<linear-gradient> = linear-gradient([ [ <angle> | to <side-or-corner> ] ,]? <color-stop>[, <color-stop>]+)
+
+	<side-or-corner> = [left | right] || [top | bottom]
+
+	<color-stop> = <color> [ <length> | <percentage> ]?
+	取值：
+	下述值用来表示渐变的方向，可以使用角度或者关键字来设置：
+
+	可写可不写，看语法中的正则?符号：
+	<angle>：
+	    用角度值指定渐变的方向（或角度）。
+	to left：
+	    设置渐变为从右到左。相当于: 270deg
+	to right：
+	    设置渐变从左到右。相当于: 90deg
+	to top：
+	    设置渐变从下到上。相当于: 0deg
+	to bottom：
+	    设置渐变从上到下。相当于: 180deg。这是默认值，等同于留空不写。
+
+	必写，可写多个，看语法中的正则+：
+	<color-stop> 用于指定渐变的起止颜色：
+
+	<color>：
+	    指定颜色。
+	<length>：
+	    用长度值指定起止色位置。不允许负值
+	<percentage>：
+	    用百分比指定起止色位置。
+ */
+
+
+	.test {
+		background: linear-gradient(#bbb, #fff);
+	}
+	
+	/* 50%长度的位置是该颜色#f00 */
+	.test2 {
+		background: linear-gradient(#000, #f00 50%, #090);
+	}
+
+	/* 表示从0角度开始，即是顶部边框线(与to top效果一样)，相当于从上到下渐变，90度(右边框线，to right效果一样)则是从左到右，以此类推，50%则是从上到下长度的一半 */
+	.test3 {
+	    background: linear-gradient(0deg, #000 50%, #fff 100%);
+	}
+
+	/* 从右上角开始，对角渐变 */
+	.test4 {
+	    background: linear-gradient(to top right, #fff 50%, #000 100%);
+	}
+</style>
+</head>
+<body>
+	<div class="test"></div>
+	<div class="test2"></div>
+	<div class="test3"></div>
+	<div class="test4"></div>
+</body>
+</html>
