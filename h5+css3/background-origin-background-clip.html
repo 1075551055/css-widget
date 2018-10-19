@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>background-origin & background-clip</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+
+		a {
+			width: 50px;
+			height: 50px;
+			box-sizing: border-box;
+			display: block;
+			background-color: #ddd;
+			margin: 80px;
+			background-image: url('images/sprites.png');
+
+			background-position: -20px 0;
+			/* 巧妙使用padding,然后进行裁剪 */
+			padding: 14px;
+			/*设置背景图的起始原点，默认是容器的左上角，从padding开始.这里是设置了从内容开始。
+			border-box:从border的位置开始填充背景，会与border重叠
+            padding-box:从padding的位置开始填充背景，会与padding重叠
+            content-box:从内容的位置开始填充背景*/
+			background-origin: content-box;
+			/* 设置裁剪，这里是只裁剪内容部分，其他的全看不见了。border-box: 显示border及其内容部分; padding-box: 显示padding及内容部分；content-box: 显示内容部分。
+			   裁剪使用场景：例如手机端京东左上角的关闭按钮，本来图标很小，这样造成用户难以点击，体验不好，如何稍微将a标签变大些，让点击图标在a标签中间，这样就可以增大了
+			   点击标签，提升体验*/
+			background-clip: content-box;
+		}
+	</style>
+</head>
+<body>
+	<a href=""></a>
+</body>
+</html>

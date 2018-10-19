@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>background</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		div {
+			width: 600px;
+			height: 600px;
+			border: 1px solid red;
+			overflow: auto;
+			/* 如果图片大于容器，那么默认就从容器左上角开始放置 */
+			background-image: url('images/kebi.jpg');
+
+			/* round: 图片等比例缩放显示; no-repeat: 不平铺; space：背景图像以相同的间距平铺且填充满整个容器或某个方向; repeat: 与space的不一样点在于平铺没有间距*/
+			background-repeat: round;
+			/* background-repeat: no-repeat; */
+			/* background-repeat: space; */
+			/* background-repeat: repeat; */
+
+			/* fixed: 位置固定不变，不会随着浏览器滚动条而变动; scroll: 随着浏览器滚动条滚动而变动; local & scroll: 不会随着浏览器的滚动条滚动而滚动, 两者区别在于如果当前盒子是有滚动条的，那么local则会随着内容的滚动而滚动，scroll则不会*/
+			/* background-attachment: fixed; */
+			background-attachment: scroll;
+			/* background-attachment: local; */
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<span style="height: 700px;display: block"></span>
+	</div>
+	<span style="height: 800px;display: block"></span>
+</body>
+</html>

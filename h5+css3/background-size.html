@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>background-size</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		div {
+			width: 400px;
+			height: 600px;
+			border: 1px solid red;
+			overflow: auto;
+			background-image: url('images/kebi.jpg');
+
+			/* 最好设置得宽高比例与图片的宽高比例一样，否则图片会失真 */
+			/* background-size: 400px 500px; */
+			
+			/* 设置百分比，是参照父容器可放置内容区域的百分比 */
+			/* background-size: 50% 50%; */
+			
+			/* contain: 按宽高比例调整图片大小，使图片全部包含在容器内; 
+			   *cover:  与contain刚好相反，背景图片会按比例缩放自 适应整个背景区域，如果背景区域不足以包含所有背景图片，图片内容会溢出	
+			*/
+			/* background-size: contain; */
+			background-size: cover;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		
+	</div>
+	<span style="height: 800px;display: block"></span>
+</body>
+</html>
