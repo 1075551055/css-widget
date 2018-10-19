@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>border-image</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+	div{
+		width: 200px;
+		height: 200px;
+		margin:100px auto;
+		box-sizing: border-box;
+		border: 27px solid red;
+		/* 设置边框的图片，默认显示在四个角 */
+		border-image-source: url('images/border1.png');
+		/* border-image-slice设置 */
+		border-image-slice: 35 fill;
+	}
+</style>
+</head>
+<body>
+	<div>test</div>
+</body>
+</html>
