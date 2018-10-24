@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>transform转换(位置，大小缩放，旋转)-二维</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		div {
+			width: 100px;
+			height: 100px;
+			background: skyblue;
+			margin: 20px auto;
+			cursor: pointer;
+			transition: transform 2s linear 0s;
+		}
+
+		div:first-of-type:active {
+			/* 只有一个参数代表x轴，参照点是元素的左上角 */
+			/* transform: translate(500px); */
+			
+			/* 两个参数代表x和y轴 */
+			/* transform: translate(500px, 200px); */
+			
+			/* translateX: x轴移动， translateY: y轴移动; */
+			transform: translateX(600px);
+		}
+
+		div:nth-of-type(2):active {
+			/* scale设置元素大小缩放，如果只有一个参数则代表x和y方向都进行等比例缩放 */
+			/* transform: scale(2); */
+			
+			/* x方向y方向进行缩放 */
+			/* transform: scale(2, 1.2); */
+			
+			/* scaleX：x方向，scaleY: y方向; */
+			transform: scaleX(5);
+		}
+
+		div:nth-of-type(3) {
+			/*旋转：rotate*/
+			/* 设置旋转的轴心点， left top right bottom center */
+			transform-origin: left top;
+		}
+
+		div:nth-of-type(3):active {
+			/* 顺时针旋转90度 */
+			/* transform: rotate(90deg); */
+			
+			/* 设置多个transform属性值 ，两者互换顺序也ok*/
+			transform: translateX(300px) rotate(90deg);
+		}
+
+		div:nth-of-type(4):active {
+			/* 斜切,一个参数表示x轴方向 */
+			/* transform: skew(90deg); */
+
+			/* 可以以左边框为参照点，与y轴构成30度角 */
+			/* transform: skewX(30deg); */
+			
+			/* 可以以上边框为参照点，与x轴水平方向构成30度角 */
+			transform: skewY(30deg);
+			/* transform: skew(90deg, -30deg); */
+		}
+
+	</style>
+</head>
+<body>
+	<div>test1</div>
+	<div>test2</div>
+	<div>test3</div>
+	<div>test4</div>
+</body>
+</html>

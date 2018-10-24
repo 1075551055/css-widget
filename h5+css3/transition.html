@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>transition 过渡效果</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		div {
+			width: 50px;
+			height: 50px;
+			background-color: #ccc;
+			position: absolute;
+			left: 100px;
+			top: 50px;
+			/* transition： 属性名称 过渡时间 时间函数 延迟时间(多久后开始执行过渡效果)*/
+            /* transition: left 2s linear 0s; */
+            /* transition: background-color 2s linear 0s; */
+
+            /* all表示所有属性都起过渡效果作用，效率比较低，它会查询所有属性，然后添加过渡效果 */
+            /* transition: all 2s linear 0s; */
+			
+			/* steps让过渡效果分步执行 */
+			transition: all 2s steps(10);
+
+            /* 加webkit前缀是为了兼容webkit内核的浏览器，例如谷歌。css3样式大多数需要考虑类似这样的兼容写法 */
+            --webkit-transition: left 2s linear 0s;
+            -moz-transition: left 2s linear 0s;
+
+		}
+
+		div:hover {
+			cursor: pointer;
+		}
+
+		/* 长按鼠标才有效果 */
+		div:active {
+            left: 1000px;
+            background-color: blue;
+        }
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

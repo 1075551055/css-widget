@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>手风琴菜单</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+	* {
+		padding: 0;
+		margin: 0;
+	}
+
+	.menu {
+		width: 200px;
+		height: auto;
+		margin: 50px auto;
+	}
+
+	h3 {
+		background-color: green;
+	}
+
+	ul {
+		padding-left: 10px;
+	}
+
+	li {
+		list-style: none;
+	}
+
+	.item {
+		border-bottom: 2px solid #ccc;
+	}
+
+	.itemBox {
+		background-color: yellow;
+		height: 0px;
+		overflow: hidden;
+		transition: height 0.8s linear 0s;
+	}
+
+	.item:hover > .itemBox{
+		height: 110px;
+	}
+
+</style>
+</head>
+<body>
+	<div class="menu">
+		<div class="item">
+			<h3>NBA新闻</h3>
+			<div class="itemBox">
+				<ul>
+					<li>科比退役战</li>
+					<li>科比退役战</li>
+					<li>科比退役战</li>
+					<li>科比退役战</li>
+				</ul>
+			</div>
+		</div>
+		<div class="item">
+			<h3>NBA新闻</h3>
+			<div class="itemBox">
+				<ul>
+					<li>科比退役战</li>
+					<li>科比退役战</li>
+					<li>科比退役战</li>
+					<li>科比退役战</li>
+				</ul>
+			</div>
+		</div>
+		<div class="item">
+			<h3>NBA新闻</h3>
+			<div class="itemBox">
+				<ul>
+					<li>科比退役战</li>
+					<li>科比退役战</li>
+					<li>科比退役战</li>
+					<li>科比退役战</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
