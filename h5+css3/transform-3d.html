@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>transform 3d</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		div {
+			width: 80px;
+			height: 80px;
+			background-color: skyblue;
+			margin: 20px auto;
+			transition: transform 2s;
+		}
+
+		div:first-of-type:active {
+			/* 分别表示x,y，z的值，这里z轴看不出效果，因为z轴正对着我们 */
+			transform: translate3d(20px, 20px, 20px);
+		}
+
+		div:nth-of-type(2):active{
+			transform: scale3d(1.5, 0.5, 1);
+		}
+
+		div:nth-of-type(3):active{
+			/* x y z的值代表向量，假如只设置了x值，无论x是1还是10,其结果都是围绕着x轴旋转。这个值的作用主要是决定了偏向x或者y或者z轴的角度大小，例如x是1，y也是1,因为这个div是个正方形，刚好围绕着与x轴的45度对角线旋转 ,如果y值比x的值大则角度会偏向y轴(即是要围绕的线条与x轴组成的角度变大)*/
+			/* 左手法则？ */
+			transform: rotate3d(1, 1, 0, 160deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="div1"></div>
+	<div class="div2"></div>
+	<div class="div3">div3</div>
+	<div class="div4"></div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>tranform添加多个属性值</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		 *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background-color: black;
+        }
+        .box{
+            width: 440px;
+            margin:100px auto;
+
+        }
+
+        img {
+        	/* img与本文的对其方式是以基线对齐的，所以会造成img直接出现空隙的情况，下面是三种解决办法 */
+        	/* 方法1，设置对其方式，bottom, middel, top都行 */
+        	/* vertical-align: middle; */
+			
+			/* 方法2，首先让img变成block元素，类似div，然后设置隐藏溢出部分 */
+        	/* overflow: hidden;
+        	display: block; */
+			
+			/* 方法3：直接让元素浮动起来，这样就不占位置了(并不是完全脱标)，文字自然会贴着底部了 */
+        	/* float: left; */
+        }
+
+        .box > img{
+            transition: transform 1s;
+        }
+        .box > img:nth-of-type(1){
+            transform: translate(100px,100px) rotate(30deg);
+        }
+        .box > img:nth-of-type(2){
+            transform: translate(-100px,-100px) rotate(-30deg);
+        }
+        .box > img:nth-of-type(3){
+            transform: translate(200px,200px) rotate(60deg);
+        }
+        .box > img:nth-of-type(4){
+            transform: translate(-200px,-200px) rotate(-60deg);
+        }
+        .box > img:nth-of-type(5){
+            transform: translate(150px,150px) rotate(90deg);
+        }
+        .box > img:nth-of-type(6){
+            transform: translate(50px,150px) rotate(-90deg);
+        }
+        .box > img:nth-of-type(7){
+            transform: translate(-150px,-150px) rotate(60deg);
+        }
+        .box > img:nth-of-type(8){
+            transform: translate(10px,-250px) rotate(-90deg);
+        }
+        .box > img:nth-of-type(9){
+            transform: translate(-250px,10px) rotate(45deg);
+        }
+
+        .box:hover > img {
+			transform: none;
+        }
+	</style>
+</head>
+<body>
+	<div class="box">
+		<img src="images/shield_1_01.png" alt="">
+		<img src="images/shield_1_02.png" alt="">
+		<img src="images/shield_1_03.png" alt="">
+		<img src="images/shield_1_04.png" alt="">
+		<img src="images/shield_1_05.png" alt="">
+		<img src="images/shield_1_06.png" alt="">
+		<img src="images/shield_1_07.png" alt="">
+		<img src="images/shield_1_08.png" alt="">
+		<img src="images/shield_1_09.png" alt="">
+	</div>
+</body>
+</html>

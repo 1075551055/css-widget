@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>transform实现元素居中</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		.parent {
+			width: 600px;
+			height: 600px;
+			background: skyblue;
+			position: relative;
+		}
+
+		.child {
+			width: 100px;
+			height: 100px;
+			background-color: red;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* 这里的-50%是相对于元素本身的宽高来说的 */
+            transform: translate(-50%, -50%);
+		}
+	</style>
+</head>
+<body>
+	<div class="parent">
+		<div class="child"></div>
+	</div>
+</body>
+</html>

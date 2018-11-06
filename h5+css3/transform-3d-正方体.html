@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>transform 正方体</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		.square{
+			width: 400px;
+			height: 400px;
+			margin: 400px auto;
+			border: 1px solid red;
+			position: relative;
+			/* 子元素使用transform 3d效果的时候，如果想让它们保持transform后的效果，那么需要在它们的父元素使用该属性去设置是否保持3d效果，否则转换是瞬间的，又回到最初的状态了，所以看不到效果，例如看到的back元素永远比front元素在前，因为back在front后面，覆盖了front */
+			transform-style: preserve-3d;
+			/* 围绕x与y轴的中间即是45度角所在的线，旋转30度。这样的目的是为了从30度角度去看整个立方体，否则看不到立方体的效果，六个面的div都叠加在一起了 */
+			transform: rotate3d(1, 1, 0, -30deg);
+			/* opacity: 0.9; */
+		}
+		.square > div {
+			width: 400px;
+			height: 400px;
+			/* 设置透明度 */
+			opacity: 0.7;
+		}
+
+		.front {
+			background-color: skyblue;
+			position: absolute;
+			transform: translate3d(0, 0, 200px);
+		}
+
+		.back {
+			background-color: green;
+			position: absolute;
+			transform: translate3d(0, 0, -200px) rotate3d(1, 0, 0, 180deg);
+		}
+
+		.top{
+			background-color: #ccc;
+			position: absolute;
+			transform: translate3d(0, -200px, 0) rotate3d(1, 0, 0, 90deg);
+		}
+
+		.bottom {
+			background-color: #eee;
+			position: absolute;
+			transform: translate3d(0, 200px, 0) rotate3d(1, 0, 0, -90deg);
+		}
+
+		.left {
+			background-color: #f90;
+			position: absolute;
+			transform: translate3d(-200px, 	0, 	0)	rotate3d(0, 1, 0, -90deg);
+		}
+
+		.right {
+			background-color: #ff0;
+			position: absolute;
+			transform: translate3d(200px, 	0, 	0)	rotate3d(0, 1, 0, 90deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="square">
+		<div class="front">front</div>
+		<div class="back">back</div>
+		<div class="top">top</div>
+		<div class="bottom">bottom</div>
+		<div class="left">left</div>
+		<div class="right">right</div>
+	</div>
+</body>
+</html>

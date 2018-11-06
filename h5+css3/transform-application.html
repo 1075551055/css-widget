@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>transform应用</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		.box {
+			margin: 20% auto;
+			width: 500px;
+			height: 300px;
+			position: relative;
+		}
+
+		img {
+			position: absolute;
+			left: 0;
+			top: 0;
+			transform-origin: left top;
+			transition: transform 2s;
+		}
+
+		.box:hover > img:nth-of-type(1) {
+			transform: rotate(120deg);
+			/* transition: transform 2s; */  /* 把过渡加在这里会有一个问题，就是当光标离开后，图片不会按照原来的轨迹返回，失去了过渡效果。所以最好放在img的样式中加以修饰 */
+		}
+
+		.box:hover > img:nth-of-type(2) {
+			transform: rotate(240deg);
+			/* transition: transform 2s; */
+		}
+
+		.box:hover > img:nth-of-type(3) {
+			transform: rotate(360deg);
+			/* transition: transform 2s; */
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<img src="images/A.jpg" alt="">
+		<img src="images/A.jpg" alt="">
+		<img src="images/A.jpg" alt="">
+	</div>
+</body>
+</html>
