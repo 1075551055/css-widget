@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>keyframes 动画</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		
+		div {
+			margin: 0 auto;
+			width: 100px;
+			height: 100px;
+			background-color: #ccc;
+			animation-name: move-animation;
+			animation-duration: 2s;
+			/* animation-delay: 1s; */
+			/* 设置播放次数，infinite：表示无限循环 */
+			animation-iteration-count: 1;
+			/* animation-iteration-count: infinite; */
+			/* 动画时间函数 */
+			animation-timing-function: linear;
+			/* forwards保留动画结束时候的状态； backwards不会保留动画结束时候的状态，会立即回到初始状态；both:会保留动画的结束时状态*/
+			animation-fill-mode: both;
+
+			/* 控制动画状态，running表示运行，paused表示暂停 */
+			/* animation-play-state: running */
+		}
+
+		@keyframes move-animation {
+			/* from表示时间的开始，to表示时间的结束； 还可以使用百分比进行设置，from相当于0%， to相当于100%, 都是整个动画耗时的百分比 */
+			from {
+				transform: translate(0, 0);
+			}
+			to {
+				transform: translate(600px, 600px);
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<input type="button" id="play" value="play">
+	<input type="button" id="pause" value="pause">
+	<div></div>
+
+	<script type="text/javascript" charset="utf-8">
+		// h5中新增的样式选择器api:querySelector
+		var div = document.querySelector("div");
+		document.querySelector("#play").onclick = function(){
+			// 将css中的属性改成驼峰就是dom中的api
+			div.style.animationPlayState = "running";	
+		}
+		document.querySelector("#pause").onclick = function(){
+			div.style.animationPlayState = "paused";
+		}
+	</script>
+</body>
+</html>
