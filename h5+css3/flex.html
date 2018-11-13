@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>flex布局</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		.parent {
+			height: 300px;
+			width: 1000px;
+			border: 1px solid red;
+			box-sizing: border-box;
+			/* 想让子元素伸缩布局排列，那么需要给父容器设置成flex */
+			display: flex;
+			/* 设置子元素布局方式，默认是flex-start：从父容器的左边(上边)开始伸缩布局排列；flex-end则是从父容器最右边(下边)开始;space-between: 左右(上下)两个子元素靠着父容器对齐，没有间隙，而space-around则是每个子元素左右(上下)两边都有等份(剩余空间计算出来的)的距离; */
+			justify-content: space-around;
+			/* 设置子元素是否换行,如果是不换行nowrap那么父容器不够大了，就算子元素超出了也会进行压缩 */
+			/* flex-wrap: nowrap; */
+			/* 设置子元素排列的方向，默认是row，justify-content则是由这个方向决定的 */
+			/* flex-direction: column; */
+			/* 语法:flex-flow: <flex-direction> || <flex-wrap>; */
+			flex-flow: row wrap;
+		}
+
+		.parent div {
+			width: 200px;
+			height: 290px;
+
+		}
+
+		.parent div:nth-of-type(1) {
+			background-color: skyblue;
+		}
+
+		.parent div:nth-of-type(2) {
+			background-color: #ccc;
+		}
+
+		.parent div:nth-of-type(3) {
+			background-color: #cfc;
+		}
+
+		.parent div:nth-of-type(4) {
+			background-color: #fcf;
+		}
+
+		.parent div:nth-of-type(5) {
+			background-color: #fcc;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="parent">
+		<div class="div1"></div>
+		<div class="div2"></div>
+		<div class="div3"></div>
+		<div class="div4"></div>
+		<div class="div5"></div>
+	</div>
+</body>
+</html>
