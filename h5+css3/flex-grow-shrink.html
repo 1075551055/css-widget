@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>flex-grow, flex-shrink</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		.parent {
+			height: 300px;
+			width: 1000px;
+			border: 1px solid red;
+			box-sizing: border-box;
+			/* 想让子元素伸缩布局排列，那么需要给父容器设置成flex */
+			display: flex;
+			
+		}
+
+		.parent div {
+			width: 200px;
+			height: 290px;
+
+		}
+
+		.parent div:nth-of-type(1) {
+			background-color: skyblue;
+			/* 默认是0，表示占剩余空间的比例，比例=flex-grow的值/所有兄弟元素flex-grow值的总和(包括本身) 。flex-shrink则相反，当子元素超出了父容器，超出部分的值则变成子元素对应的压缩值*/
+			flex-grow: 1;
+		}
+
+		.parent div:nth-of-type(2) {
+			background-color: #ccc;
+			flex-grow: 1;
+		}
+
+		.parent div:nth-of-type(3) {
+			background-color: #cfc;
+		}
+
+		.parent div:nth-of-type(4) {
+			background-color: #fcf;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="parent">
+		<div class="div1"></div>
+		<div class="div2"></div>
+		<div class="div3"></div>
+		<div class="div4"></div>
+	</div>
+</body>
+</html>
