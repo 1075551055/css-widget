@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>flex属性</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		main {
+			width: 100%;
+			height: 500px;
+			background-color: #ccc;
+			display: flex;
+		}
+		/* flex:number 设置占剩下空间的比例，是flex-grow和flex-shrink的组合*/
+		article {
+			flex: 1;
+			background-color: #fca;
+		}
+
+		aside {
+			flex: 2;
+			background-color: #aaa;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<article></article>
+		<aside></aside>
+	</main>
+</body>
+</html>
