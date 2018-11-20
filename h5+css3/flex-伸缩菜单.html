@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>flex实现伸缩菜单</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div {
+			margin: 200px auto;
+			width: 500px;
+			height: 500px;
+		}
+
+		div > ul {
+			list-style: none;
+			width: 100%;
+			/* 设置为伸缩盒子 */
+			display: flex;
+
+		}
+
+		div li {
+			flex: 1;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			background-color: skyblue;
+			border-right: 1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<ul>
+			<li>首页</li>
+			<li>NBA</li>
+			<li>新闻</li>
+			<li>资讯</li>
+			<li>IT</li>
+		</ul>
+	</div>
+</body>
+</html>

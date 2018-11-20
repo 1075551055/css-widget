@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>align items设置侧轴方向布局方式</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		.main {
+			width: 900px;
+			height: 600px;
+			border: 1px solid red;
+			margin: 0 auto;
+			display: flex;
+			/* 设置主轴方向的排列方式，这里是水平方向 */
+			justify-content: space-around;
+			/* 设置侧轴的排列方式，这里是垂直方向，center：居中 */
+			align-items: center;
+		}
+
+		.main div {
+			height: 200px;
+			width: 200px;
+		}
+
+		.first {
+			/* flex: 1; */
+			background-color: skyblue;
+			/* 设置自个侧轴排列方式 */
+			align-self: flex-start;
+		}
+
+		.second {
+			/* flex: 1; */
+			background-color: #ababab;
+		}
+
+		.third {
+			/* flex: 1; */
+			background-color: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="first"></div>
+		<div class="second"></div>
+		<div class="third"></div>
+	</div>
+</body>
+</html>
