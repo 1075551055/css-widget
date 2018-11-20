@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>flex实现宽高自适应</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.box {
+			width: 100%;
+			height: 800px;
+			display: flex;
+			/* 设置flex方向是为了设置main侧轴方向所占的比例，这里是垂直方向所占比例 */
+			flex-direction: column;
+		}
+
+		header {
+			width: 100%;
+			height: 150px;
+			background-color: skyblue;
+		}
+
+		main {
+			width: 100%;
+			background-color: #aafabb;
+			flex: 1;
+			display: flex;
+		}
+
+		article {
+			flex: 1;
+			height: 100%;
+			background-color: green;
+		}
+
+		aside {
+			flex: 2;
+			height: 100%;
+			background-color: pink;
+		}
+
+		footer {
+			width: 100%;
+			height: 150px;
+			background-color: #cfcfcf;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<header></header>
+		<main>
+			<article></article>
+			<aside></aside>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+</html>
