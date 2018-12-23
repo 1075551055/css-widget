@@ -17,53 +17,72 @@
 		.box {
 			width: 560px;
 			height: 300px;
-			margin: 300px auto;
+			margin: 100px auto;
 			position: relative;
-			transform: rotate3d(1, 1, 0, 30deg);
-			/* 保持3d转换后的状态，否则看不到转换后的效果，因为转换一瞬间元素就回到了原来的位置 */
+			
+			transform: rotate3d(1, 1, 0, -30deg);
+			/* 让自己及其子元素保持3d转换后的状态，否则看不到转换后的效果，因为转换一瞬间元素就回到了原来的位置 */
 			transform-style: preserve-3d;
+			
 		}
 		ul{
 			width: 100%;
 			height: 100%;
+			
 		}
-		li{
+		ul > li{
 			width: 25%;
 			height: 100%;
 			/* relative定位并不会将元素转换成block元素，所以想设置宽高可以使用浮动，将其转成block元素 */
 			position: relative;
 			float: left;
+			/* 让自己及其子元素保持3d转换后的状态，否则看不到转换后的效果，因为转换一瞬间元素就回到了原来的位置 */
+			transform-style: preserve-3d;
+			
 		}
 
 		ul > li > span{
 			width: 100%;
 			height: 100%;
+			/* absolute定位会将元素转换成block元素，此时可以设置宽高 */
+			position: absolute;
+			left: 0;
+			top: 0;
+			
 		}
 
 		ul > li > span:nth-of-type(1) {
 			background-image: url('images/1.jpg');
-			/* absolute定位会将元素转换成block元素，此时可以设置宽高 */
-			position: absolute;
 			transform: translateZ(150px);
 		}
 
 		ul > li > span:nth-of-type(2) {
 			background-image: url('images/2.jpg');
-			/* absolute定位会将元素转换成block元素，此时可以设置宽高 */
-			position: absolute;
+			transform: translateZ(-150px);
 		}
 
 		ul > li > span:nth-of-type(3) {
 			background-image: url('images/3.jpg');
-			/* absolute定位会将元素转换成block元素，此时可以设置宽高 */
-			position: absolute;
+			transform: translateY(150px) rotateX(-90deg);
 		}
 
 		ul > li > span:nth-of-type(4) {
 			background-image: url('images/4.jpg');
-			/* absolute定位会将元素转换成block元素，此时可以设置宽高 */
-			position: absolute;
+			transform: translateY(-150px) rotateX(90deg); 
 		}
+
+		ul > li:nth-of-type(2) > span{
+			background-position: -100%;
+		}
+
+		ul > li:nth-of-type(3) > span{
+			background-position: -200%;
+		}
+
+		ul > li:nth-of-type(4) > span{
+			background-position: -300%;
+		}
+
 	</style>
 </head>
 <body>
