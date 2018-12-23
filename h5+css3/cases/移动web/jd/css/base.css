@@ -1,0 +1,39 @@
+/* reset css */
+/* 所有元素以及伪类元素 */
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	/* 因为移动web需要适应不用设备，用的都是非固定像素，所以盒子模型需要使用border-box, 如果使用content-box
+	那么会很难计算元素的宽度究竟是多少(计算元素宽度是content-box的通病) */
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	/* 清除移动端链接或者JavaScript可点击元素点击的时候高亮的效果。该属性只用webkit内核的浏览器才有。Only Webkit */
+	tap-highlight-color: transparent;
+}
+
+body{
+	font-size: 14px;
+	font-family: "Microsoft YaHei",sans-serif;
+	color: #333;
+}
+
+ul,ol{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+	color: #333;
+}
+
+input,txtarea {
+	resize: none;
+	border: none;
+	outline: none;
+	/* 大多数移动端都是webkit内核浏览器。去掉默认的元素外观设置 */
+	-webkit-appearance: none;
+}
+
+/* common css */
