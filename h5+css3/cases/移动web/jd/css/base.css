@@ -1,4 +1,4 @@
-/* reset css */
+/*reset css  */
 /* 所有元素以及伪类元素 */
 *,
 *::after,
@@ -17,6 +17,23 @@ body{
 	font-size: 14px;
 	font-family: "Microsoft YaHei",sans-serif;
 	color: #333;
+}
+
+/* 为什么需要清除浮动？因为父元素无法获取到子元素需要的高度，所以通过清除浮动便可以让父元素自动获取子元素的高度。各种清除
+浮动的方法优缺点对比：https://www.cnblogs.com/nxl0908/p/7245460.html */
+.clearfix::after{
+	content: "";
+	/* 注意：别漏了转成块级元素。原理与在浮动的最后一个元素后面加上一个div(块级元素，有高度)然后清除浮动一样 */
+	display: block;
+	height: 0;
+	line-height: 0;
+	visibility: hidden;
+	clear: both;
+}
+
+.clearfix{
+	/* IE清除浮动 */
+	zoom: 1;
 }
 
 ul,ol{

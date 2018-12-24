@@ -20,6 +20,7 @@ body{
 	height: 40px;
 	left: 0;
 	top: 0;
+	z-index: 500;
 }
 .search_box{
 	max-width: 640px;
@@ -42,10 +43,11 @@ body{
 }
 
 .search_box form {
-	/* 技巧：先设置padding然后再设置宽度百分比，这个100%是除去padding值父元素剩下空间的百分百，这样就能做到自适应了 */
+	/* 技巧：先设置宽度100%，然后设置padding值，那么剩下的就是内容的宽度了，这样就能做到自适应了 */
 	width: 100%;
 	padding-left:70px;
 	padding-right:50px;
+	position: relative;
 
 }
 .search_box form .icon_search{
@@ -75,4 +77,57 @@ body{
     height: 40px;
 	/* 单行文字垂直居中 */
 	line-height: 40px;
+}
+
+/* banner */
+
+.banner{
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.banner ul:first-child{
+	width: 1000%;
+}
+
+.banner ul:first-child li{
+	/* 父元素内容大小的10%。 是相对父元素的内容宽度来说的 */
+	width: 10%;
+	float: left;
+}
+
+.banner ul:first-child li a{
+	width: 100%;
+	/* 让img撑大a标签 */
+	display: block;
+
+}
+
+.banner ul:first-child li a img{
+	width: 100%;
+	/* 解决间隙问题。与父元素a有一定的间隙。 解决间隙有三种方法：1.父元素font-size: 0px;2.设置文字垂直对其方式，virtual-align: center;3.转成块级元素，快捷元素不存在间隙问题 */
+	display: block;
+}
+
+.banner ul:last-child {
+	/* 因为父元素用了overflow:hidden, 假如该元素的定位偏离了父元素就看不见了，这也是清除浮动使用overflow:hidden的缺点之一; */
+	position: absolute;
+	/* 相对自身宽度的50% */
+	transform: translateX(-50%);
+	left: 50%;
+	bottom: 10px;
+}
+
+.banner ul:last-child li.current{
+	background-color: #fff;
+}
+
+.banner ul:last-child li{
+	float: left;
+	width: 10px;
+	height: 10px;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	margin-left: 10px;
 }
