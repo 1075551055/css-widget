@@ -74,7 +74,7 @@ body{
 	text-align: center;
 	color: #fff;
 	width: 50px;
-    height: 40px;
+	height: 40px;
 	/* 单行文字垂直居中 */
 	line-height: 40px;
 }
@@ -166,9 +166,158 @@ body{
 }
 
 .nav ul li p{
-	 text-align: center;
-	 /* 考虑字体大小，颜色等 */
-	 font-size: 12px;
-	 color: #666;
-	 padding: 5px 0;
+	text-align: center;
+	/* 考虑字体大小，颜色等 */
+	font-size: 12px;
+	color: #666;
+	padding: 5px 0;
+}
+
+/* product 产品区 */
+.product{
+	/* div默认宽度就是100%，宽度可设可不设 */
+	padding: 0 5px;
+}
+
+/* product 秒杀区 */
+.seckill{
+	width: 100%;
+	background-color: #fff;
+}
+
+.seckill .seckill_top{
+	height: 34px;
+	border-bottom: 1px solid #ddd;
+}
+
+.seckill .icon_time {
+	width: 16px;
+	height: 20px;
+	float: left;
+	margin-left:10px;
+	margin-top:7px;
+	background: url("../images/seckill-icon.png") no-repeat center/16px 20px;
+}
+
+.seckill .seckill_desc{
+	float: left;
+	line-height: 34px;
+	text-align: center;
+	margin-left: 10px;
+	color: red;
+}
+
+.seckill .time{
+	float: left;
+	margin-left: 10px;
+}
+
+.seckill .time span{
+	line-height: 34px;
+	text-align: center;
+}
+
+.seckill a{
+	line-height: 34px;
+}
+
+.seckill .seckill_bottom{
+	
+}
+
+.seckill .seckill_bottom ul {
+	width: 100%;
+	padding: 10px 0;
+	box-shadow: 0 0 2px rgba(0, 0, 0, .6);
+}
+
+.seckill .seckill_bottom li {
+	width: 33.333333%;
+	float: left;
+	text-align: center;
+}
+
+.seckill .seckill_bottom li a{
+	/* 默认宽度是父元素100%，可设可不设 */
+	display: block;
+}
+
+.seckill .seckill_bottom li a img{
+	display: block;
+	width: 63%;
+	margin: 0 auto;
+}
+
+.seckill p{
+	font-size: 12px;
+	padding: 5px 0;
+}
+
+.seckill .nowPrice{
+	color: red;
+}
+
+.seckill .oldPrice{
+	color: #666;
+	/* 横穿 */
+	text-decoration: line-through;
+}
+
+/* product 公共样式 */
+.product_box{
+	width: 100%;
+	background-color: #fff;
+	margin-top: 10px;
+	/* 加阴影，利于区域区分 */
+	box-shadow: 0 0 2px #ccc;
+}
+
+.product_box .title {
+	line-height: 34px;
+	border-bottom: 1px solid #ddd;
+
+}
+
+.product_box .title h3{
+	font-weight: normal;
+	/* padding-left可以设置与: :before元素的距离，：：before元素就在padding-left区域; */
+	padding-left: 20px;
+	position: relative;
+
+}
+
+.product_box .title h3::before{
+	content: "";
+	width: 2px;
+	height: 15px;
+	background-color: #d8505c;
+	display: block;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
+
+.product_box div:nth-of-type(2) a{
+	display: block;
+}
+
+
+/* product 组合样式: 可以避免重复多余的代码(使用场景：当有几个局部布局大同小异的时候可以使用); */
+.w_50p{
+	width: 50%;
+}
+
+.w_50p img{
+	display: block;
+	width: 100%;
+}
+
+.bl{
+    border-left:1px solid #ddd;
+}
+.br{
+    border-right:1px solid #ddd;
+}
+.bb{
+    border-bottom:1px solid #ddd;
 }
