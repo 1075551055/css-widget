@@ -11,7 +11,7 @@ body{
 	width: 100%;
 }
 
-/* 头部 */
+/* 头部 搜索*/
 .search {
 	/* 小技巧：在search_box外面再套一层div做固定定位，可以让search_box居中显示。假如没有这一层，只在search_box上做固定定位并且100%宽度
 	则无法做到居中显示，因为固定定位对相对body来说的，无论是宽度还是定位，可以把.search的样式全放在search_box上尝试一下效果 */
@@ -43,7 +43,7 @@ body{
 }
 
 .search_box form {
-	/* 技巧：先设置宽度100%，然后设置padding值，那么剩下的就是内容的宽度了，这样就能做到自适应了 */
+	/* 技巧：先设置宽度100%，然后设置padding值，那么剩下的就是内容的宽度了，这样就能做到自适应了 -->因为是盒子模型是: border-box; */
 	width: 100%;
 	padding-left:70px;
 	padding-right:50px;
@@ -79,7 +79,7 @@ body{
 	line-height: 40px;
 }
 
-/* banner */
+/* banner轮播广告*/
 
 .banner{
 	width: 100%;
@@ -130,4 +130,45 @@ body{
 	border: 1px solid #fff;
 	border-radius: 5px;
 	margin-left: 10px;
+}
+
+/* 编码技巧：先把css选择器逐个逐个全部写出来，然后再添加样式，这样就不会出现混乱了 */
+/* nav导航栏 */
+.nav{
+	width: 100%;
+	background: #fff;
+}
+
+.nav ul{
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ccc;
+}
+
+.nav ul li{
+	float: left;
+	/* li宽度够大,则会把其他四个挤到下一行 */
+	width: 25%;
+}
+
+.nav ul li a{
+	width: 100%;
+	display: block;
+}
+
+.nav ul li a img{
+	width: 40px;
+	height: 40px;
+	display: block;
+	/* 盒子居中显示，因为设置了display：block，类似div居中显示 */
+	margin: 0 auto;
+}
+
+.nav ul li p{
+	 text-align: center;
+	 /* 考虑字体大小，颜色等 */
+	 font-size: 12px;
+	 color: #666;
+	 padding: 5px 0;
 }
