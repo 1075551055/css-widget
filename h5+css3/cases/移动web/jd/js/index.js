@@ -101,6 +101,15 @@ function rollingBanner(){
 			removeTransition();
 			setTranslateX(-rollingIndex * bannerWidth);
 		}
+		/*滑动的时候也需要无缝*/
+        else if (rollingIndex <= 0) {
+            rollingIndex = 8;
+            /*瞬间定位*/
+            /*清过渡*/
+            removeTransition();
+            /*做位移*/
+            setTranslateX(-rollingIndex * bannerWidth);
+        }
 		// 动画结束之时，设置点的背景跟随动画的变动而变动。tips:找准事件的触发时机，然后执行相对应的function
 		setPoint();
 		
