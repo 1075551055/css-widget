@@ -115,13 +115,14 @@ function rollingBanner(){
 		
 	})
 
-	// 移动端四个触摸事件：
+	// 移动端四个触摸事件（结合这几个事件可以判断用户的滑动手势：是向左还是向右呢还是向上向下呢）：
 	// 1.touchstart ->手指按到屏幕的时候触发 
 	// 2.touchmove -> 手指滑动的时候触发 
 	// 3.touchend -> 手指离开的时候触发 
 	// 4.touchcancel -> 操作被中断的时候触发，例如突然间进来个电话，当前操作被中断了
 	var startPosition;
 	var moveXPosition;
+	var isMove
 	bannerUl.addEventListener('touchstart',function(e){
 		if(bannerRollingInterval != null){
 			// 触摸之时清除定时器
@@ -133,28 +134,33 @@ function rollingBanner(){
 	})
 
 	bannerUl.addEventListener('touchmove',function(e){
+		isMove = true;
 	    moveXPosition = e.touches[0].clientX - startPosition;
 	    removeTransition();
 		setTranslateX(-rollingIndex * bannerWidth + moveXPosition);
 	})
 
 	bannerUl.addEventListener('touchend',function(e){
-		//当移动的距离大于广告banner的三分之一宽度，则进行图片的向左移动或者向右移动
-		if(Math.abs(moveXPosition) > 1/3 * bannerWidth){
-			if(moveXPosition < 0){
-				//负数，表示向左移动
-				rollingIndex ++;
+		//判断是否是移动
+		if(isMove){
+			//当移动的距离大于广告banner的三分之一宽度，则进行图片的向左移动或者向右移动
+			if(Math.abs(moveXPosition) > 1/3 * bannerWidth){
+				if(moveXPosition < 0){
+					//负数，表示向左移动
+					rollingIndex ++;
+				}else{
+					//向右移动
+					rollingIndex --;
+				}
+				addTransition();
+				setTranslateX(-rollingIndex * bannerWidth); 
 			}else{
-				//向右移动
-				rollingIndex --;
+				// 吸附效果。 小于三分之一就吸附回去
+				addTransition();
+				setTranslateX(-rollingIndex * bannerWidth); 
 			}
-			addTransition();
-			setTranslateX(-rollingIndex * bannerWidth); 
-		}else{
-			// 吸附效果。 小于三分之一就吸附回去
-			addTransition();
-			setTranslateX(-rollingIndex * bannerWidth); 
 		}
+		isMove = false;
 	})
 
 	bannerUl.addEventListener('touchcancel',function(e){
