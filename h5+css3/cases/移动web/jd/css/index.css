@@ -89,6 +89,10 @@ body{
 
 .banner ul:first-child{
 	width: 1000%;
+	/*transition: all 5s;*/
+	/*默认显示第二张*/
+	transform: translateX(-10%);
+	-webkit-transform: translateX(-10%);
 }
 
 .banner ul:first-child li{
