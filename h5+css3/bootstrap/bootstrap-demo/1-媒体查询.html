@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>媒体查询</title>
+	<style>
+	/*	需求：
+	1. 超小屏幕的时候，div背景颜色为red；
+	2.小屏幕的时候，div背景颜色为blue；
+	3.中等屏幕的时候，div背景颜色为pink;
+	4.大屏幕的时候，div背景颜色为skyblue.*/
+
+	/*通过css3中的媒体查询可以做到需求中的所说的每一个点. bootstrap的栅格系统内部就是通过媒体查询来实现的*/
+	/*默认情况下box的样式*/
+	.box {
+		background-color: skyblue;
+		height: 400px;
+		width: 400px;
+	}
+
+	/*通过变动浏览器窗口大小便可以看到效果*/
+	/*超小屏幕*/
+	@media screen and (max-width: 768) {
+		.box{
+			background-color: red;
+		}
+	}
+
+	/*小屏幕*/
+	@media screen and (max-width: 992px) and (min-width: 768px) {
+		.box{
+			background-color: blue;
+		}
+	}
+
+	/*中等屏幕*/
+	@media screen and (max-width: 1200px) and (min-width: 992px) {
+		.box {
+			background-color: pink;
+		}
+	}
+
+	/*大屏幕*/
+	@media screen and (min-width: 1200px) {
+		.box {
+			background-color: skyblue;
+		}
+	}
+	</style>
+</head>
+<body>
+	
+	<!-- 设备划分(请参考bootstrap官网划分，栅格系统 https://v3.bootcss.com/css/#grid)：
+	1.超小屏幕（手机，小于 768px）
+	2.小屏幕（平板，大于等于 768px，小于992px）
+	3.中等屏幕（桌面显示器，大于等于 992px，小于1200px）
+	4.大屏幕（大桌面显示器，大于等于 1200px） -->
+
+	<div class="box"></div>
+</body>
+</html>
