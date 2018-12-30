@@ -1,0 +1,57 @@
+html, body{
+	width: 100%;
+	height: 100%;
+}
+
+
+header {
+	width: 100%;
+	height: 40px;
+	/*padding: 0 40px;*/
+	position: relative;
+}
+
+header a{
+	background-image: url('../images/sprites.png');
+	background-repeat: no-repeat;
+	/*//二倍图压缩，以免高像素设备失真问题，例如iPhone4*/
+	background-size: 200px 200px;
+
+	width: 40px;
+    height: 44px;
+	display: block;
+	position: absolute;
+	top: 0;
+	/*为了对背景图片进行裁剪，除去padding值，内容区设置为图片一样的大小：20px, 20px*/
+	padding: 12px 10px;
+
+	/*裁剪背景两个核心样式。一个元素分为三部分：border,padding,content*/
+	background-origin: content-box;
+	background-clip: content-box;
+}
+
+header .back{
+	left: 0;
+	background-position: -20px 0;
+}
+header .menu{
+	right: 0;
+	background-position: -60px 0;
+}
+
+header form{
+	width: 100%;
+	padding: 0 40px;
+}
+
+header form .search{
+	/*tips:通过将双飞翼两边的a元素进行绝对定位，脱离标准流，相当于浮动了起来，然后再设置form的左右padding为40px,刚好是
+	左右两个a元素的宽度，这样脱离标准流的两个a元素刚好覆盖在form的这两块padding区域，最后再设置form里面的子元素为100%，
+	因为百分比是相对父元素内容来说的，所以此时做到了自适应。注意：有个前提就是盒子模型必须为：box-sizing: border-box
+	*/
+	width: 100%;
+	margin-top: 10px;
+	border: 1px solid #ddd;
+	height: 30px;
+}
+
