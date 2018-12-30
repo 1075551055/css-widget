@@ -1,0 +1,39 @@
+/*reset css ,common css*/
+body{
+	/*公共样式：字体设置*/
+	font-size: 14px;
+	font-family: font-family: "Microsoft YaHei",sans-serif;
+	color: #333;
+}
+
+ul, li{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+	color: #333;
+}
+
+/*header*/
+header{
+	height: 41px;
+	border-bottom: 1px solid #ccc;
+}
+
+header .container{
+	
+}
+
+header .container .row{
+
+}
+
+/*+表示紧邻的div，因为这里的第一个div不需要左边框，所以从第一个div查找其对应的紧邻div,不断循环查找，这样就可以把第一个div排除掉了
+  也可以使用~，表示兄弟元素。
+*/
+header .container .row div + div{
+	line-height: 40px;
+	height: 40px;
+	border-left: 1px solid #ccc;
+}
