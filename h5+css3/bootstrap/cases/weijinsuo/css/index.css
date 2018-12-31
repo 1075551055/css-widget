@@ -15,7 +15,12 @@ a{
 	color: #333;
 }
 
-/*header*/
+a:hover{
+	text-decoration: none;
+	color: #333;
+}
+
+/*header todo:最好定义一个class, 明确是什么模块，就是分模块，这样写出来的css更清晰*/
 header{
 	height: 41px;
 	border-bottom: 1px solid #ccc;
@@ -26,7 +31,12 @@ header .container{
 }
 
 header .container .row{
+/* 	font-size: 12px; */
+}
 
+header .container .row div{
+	font-size: 12px;
+	text-align: center;
 }
 
 /*+表示紧邻的div，因为这里的第一个div不需要左边框，所以从第一个div查找其对应的紧邻div,不断循环查找，这样就可以把第一个div排除掉了
@@ -36,4 +46,50 @@ header .container .row div + div{
 	line-height: 40px;
 	height: 40px;
 	border-left: 1px solid #ccc;
+}
+
+/* 手机登录app 二维码 */
+.app-qr-code{
+	display: block;
+	line-height: 40px;
+	text-align: center;
+}
+
+.app-qr-code span {
+	
+}
+
+.app-qr-code img{
+	display: none;
+}
+
+.app-qr-code:hover img{
+	display: block;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	border: 1px solid #ccc;
+}
+
+header .container .service-time{
+	text-align: center;
+	line-height: 40px;
+}
+
+header .container .contact-tel{
+	text-align: center;
+	line-height: 40px;
+}
+
+header .container .btn-register{
+	font-size: 12px;
+	background-color: #e92322;
+	color: #fff;
+	padding: 3px 12px;
+}
+
+header .container .btn-login{
+	text-decoration: none;
+	color: #666;
+	font-size: 12px;
 }
