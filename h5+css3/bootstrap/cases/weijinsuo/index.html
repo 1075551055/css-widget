@@ -22,10 +22,11 @@
 
   </head>
   <body>
-    <header>
+    <!-- 注意：使用响应式工具的时候，hidden设置的最大屏幕值最好与下面col列设置得最大屏幕一致，例如这里是md：中等屏幕。假如下面设置得是col-lg-*, 那么当屏幕慢慢变小的情况出现布局错乱的情况，因为设置的是大屏对应的列，而隐藏则是在中屏幕才隐藏，这有可能导致内容放不在了，布局错乱 -->
+    <header class="hidden-sm hidden-xs">
       <div class="container">
         <div class="row">
-          <div class="col-lg-2">
+          <div class="col-md-2">
             <a href="#" class="app-qr-code">
               <span class="glyphicon glyphicon-phone"></span>
               <span>手机登录app</span>
@@ -33,14 +34,14 @@
               <img src="images/code.jpg" alt="">
             </a>
           </div>
-          <div class="col-lg-5 service-time">
+          <div class="col-md-5 service-time">
             <span class="glyphicon glyphicon-earphone"></span>
             <span>4006-89-4006（服务时间：9:00-21:00</span>
           </div>
-          <div class="col-lg-2 contact-tel">
+          <div class="col-md-2 contact-tel">
             <span>常见问题 财富登录</span>
           </div>
-          <div class="col-lg-3">
+          <div class="col-md-3">
             <a href="#" class="btn btn-default btn-register">免费注册</a>
             <a href="#" class="btn btn-link btn-login">登录</a>
           </div>

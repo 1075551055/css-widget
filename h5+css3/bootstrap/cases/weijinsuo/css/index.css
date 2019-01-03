@@ -86,6 +86,7 @@ header .container .btn-register{
 	background-color: #e92322;
 	color: #fff;
 	padding: 3px 12px;
+	border: none;
 }
 
 header .container .btn-login{
