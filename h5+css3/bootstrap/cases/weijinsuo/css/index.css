@@ -216,3 +216,15 @@ fieldset[disabled] .myweijinsuo-navbar-default .btn-link:hover,
 fieldset[disabled] .myweijinsuo-navbar-default .btn-link:focus {
   color: #ccc;
 }
+
+/*轮播图*/
+.pc-slideimg-box {
+	display: block;
+	 height: 400px;
+	 width: 100%;
+	 /*虽然设置了高度与宽度并不是等比例缩放/扩大的，但是可以通过cover值进行图片的等比例拉伸，做到自适应，
+	 不会出现使用img标签设置了高度后变形的情况(宽度没有等比例设置就会变形了，虽然img是一个自适应的标签)*/
+	 background-size: cover;
+	 background-repeat: no-repeat;
+	 background-position: center;
+}
