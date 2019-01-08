@@ -228,3 +228,8 @@ fieldset[disabled] .myweijinsuo-navbar-default .btn-link:focus {
 	 background-repeat: no-repeat;
 	 background-position: center;
 }
+
+.mobile-slideimg-box, .mobile-slideimg-box img{
+	display: block; /*对于img可以去除间隙 */
+	width: 100%;
+}

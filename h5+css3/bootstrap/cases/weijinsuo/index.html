@@ -101,24 +101,28 @@
 
         <!-- Wrapper for slides -->
         <!-- 需求：1. pc端： 高度固定，图片居中，铺满 ==> 如果使用img标签，那么需要设置高度，这样很容易图片变形了，为了解决这个问题，使用背景图片是最好莫过的了，结合background-size: cover样式，所以这里设置了a标签的背景为一张图片；
-                  2.移动端： -->
-        <div class="carousel-inner">
-          <div class="item active">
-            <a href="#" class="pc-slideimg-box" style="background-image: url('images/slide_01_2000x410.jpg');"></a>
-          </div>
-          <div class="item">
-              <a href="#" class="pc-slideimg-box" style="background-image: url('images/slide_02_2000x410.jpg');"></a>
-          </div>
-          <div class="item">
-              <a href="#" class="pc-slideimg-box" style="background-image: url('images/slide_03_2000x410.jpg');"></a>
-          </div>
-          <div class="item">
-             <a href="#" class="pc-slideimg-box" style="background-image: url('images/slide_04_2000x410.jpg');"></a>
-          </div>
-        </div>
+          2.移动端：宽度自适应，高度自动变化。 ==>宽度自适应使用百分比，本身img图片高度就会随着宽的变化而变化，所以使用img标签 -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <a href="#" class="pc-slideimg-box hidden-xs" style="background-image: url('images/slide_01_2000x410.jpg');"></a>
+              <a href="#" class="mobile-slideimg-box hidden-sm hidden-md hidden-lg"><img src="images/slide_01_640x340.jpg" alt=""></a>
+            </div>
+            <div class="item">
+              <a href="#" class="pc-slideimg-box hidden-xs" style="background-image: url('images/slide_02_2000x410.jpg');"></a>
+              <a href="#" class="mobile-slideimg-box hidden-sm hidden-md hidden-lg"><img src="images/slide_02_640x340.jpg" alt=""></a>
+            </div>
+            <div class="item">
+              <a href="#" class="pc-slideimg-box hidden-xs" style="background-image: url('images/slide_03_2000x410.jpg');"></a>
+              <a href="#" class="mobile-slideimg-box hidden-sm hidden-md hidden-lg"><img src="images/slide_03_640x340.jpg" alt=""></a>
+            </div>
+            <div class="item">
+             <a href="#" class="pc-slideimg-box hidden-xs" style="background-image: url('images/slide_04_2000x410.jpg');"></a>
+             <a href="#" class="mobile-slideimg-box hidden-sm hidden-md hidden-lg"><img src="images/slide_04_640x340.jpg" alt=""></a>
+           </div>
+         </div>
 
-        <!-- Controls -->
-        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+         <!-- Controls -->
+         <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
           <span class="glyphicon glyphicon-chevron-left"></span>
         </a>
         <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
