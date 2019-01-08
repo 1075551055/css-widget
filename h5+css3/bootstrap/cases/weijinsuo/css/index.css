@@ -261,3 +261,26 @@ fieldset[disabled] .myweijinsuo-navbar-default .btn-link:focus {
 .myweijinsuo-info > .container > div > a .wjs_icon_dollar{
     font-size: 30px;
 }
+
+/*预约区块*/
+.myweijinsuo-book {
+	padding: 50px 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.myweijinsuo-book > .container{
+	/*会使得内容部分水平居中的感觉*/
+	width: 900px;
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .myweijinsuo-book > .container{
+        width: 750px;
+    }
+}
+@media (max-width: 768px) {
+    .myweijinsuo-book > .container{
+    	/*超小屏设备使用流式布局，所以是100%. 可以查看bootstrap关于栅格系统这块的代码, 里面对于超小屏幕就是这样处理的*/
+        width: 100%;
+    }
+}
