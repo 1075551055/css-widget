@@ -113,9 +113,14 @@ header .container .btn-login{
 .myweijinsuo-navbar-default {
   background-color: #f8f8f8;
   border-color: #e7e7e7;
+  border-bottom: 1px solid #ccc;
 }
 .myweijinsuo-navbar-default .navbar-brand {
   color: #777;
+  display: block;
+  height: 80px;
+  /* line-height + padding-left + padding-bottom = height 垂直居中显示，前提是上下padding相等，此时必须声明height的值。如果没有上下padding只要设置line-height其实就完全可以垂直居中了 */
+  line-height: 50px;
 }
 .myweijinsuo-navbar-default .navbar-brand:hover,
 .myweijinsuo-navbar-default .navbar-brand:focus {
@@ -127,6 +132,8 @@ header .container .btn-login{
 }
 .myweijinsuo-navbar-default .navbar-nav > li > a {
   color: #777;
+  height: 80px;
+  line-height: 50px;
 }
 .myweijinsuo-navbar-default .navbar-nav > li > a:hover,
 .myweijinsuo-navbar-default .navbar-nav > li > a:focus {
