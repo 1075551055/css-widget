@@ -97,7 +97,7 @@ header .container .btn-login{
 
 /*导航*/
 /*
-	tips: 1.整理结构；2.加样式，调节样式;
+	tips: 1.整理结构；2.加样式，调节样式;3.响应式
 */
 /* 
 	bootstrap的样式都是模块化编写的，所以为了覆盖它的样式，所需要做的步骤如下：
@@ -139,12 +139,14 @@ header .container .btn-login{
 .myweijinsuo-navbar-default .navbar-nav > li > a:focus {
   color: #333;
   background-color: transparent;
+  border-bottom: 3px solid #e92322;
 }
 .myweijinsuo-navbar-default .navbar-nav > .active > a,
 .myweijinsuo-navbar-default .navbar-nav > .active > a:hover,
 .myweijinsuo-navbar-default .navbar-nav > .active > a:focus {
   color: #555;
   background-color: #e7e7e7;
+  border-bottom: 3px solid #e92322;
 }
 .myweijinsuo-navbar-default .navbar-nav > .disabled > a,
 .myweijinsuo-navbar-default .navbar-nav > .disabled > a:hover,
@@ -154,6 +156,7 @@ header .container .btn-login{
 }
 .myweijinsuo-navbar-default .navbar-toggle {
   border-color: #ddd;
+  margin-top: 23px; /* 垂直居中显示  (81px - 盒子总高度大小 - border - padding - 上下margin)/2 + 上margin */
 }
 .myweijinsuo-navbar-default .navbar-toggle:hover,
 .myweijinsuo-navbar-default .navbar-toggle:focus {
