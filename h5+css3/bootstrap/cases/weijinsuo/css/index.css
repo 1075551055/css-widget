@@ -233,3 +233,31 @@ fieldset[disabled] .myweijinsuo-navbar-default .btn-link:focus {
 	display: block; /*对于img可以去除间隙 */
 	width: 100%;
 }
+
+/*信息*/
+.myweijinsuo-info {
+	padding: 15px 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.myweijinsuo-info  > .container{
+	/*设置宽度小一点，整个内容就有点看起来居中了，但是到小屏设备就出现滚动条了，因为小屏设备的宽度比900要小*/
+    width: 900px;
+}
+
+@media (min-width: 768px) and (max-width: 992px){
+	.myweijinsuo-info  > .container{
+	    width: 750px;
+	}
+}
+
+.myweijinsuo-info > .container > div > a{
+    display: block;
+    padding: 15px 0;
+}
+.myweijinsuo-info > .container > div > a:hover{
+    color: #e92322;
+}
+.myweijinsuo-info > .container > div > a .wjs_icon_dollar{
+    font-size: 30px;
+}
