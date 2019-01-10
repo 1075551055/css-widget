@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>两边通栏自适应-左边固定右边自适应</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		/* 方式一 */
+		.left{
+			width: 200px;
+			height: 500px;
+			border: 1px solid red;
+			/* 左浮动后，右边的div就会在左边div的下面了 */
+			float: left;
+		}
+
+		.right{
+			width: 50%;
+			height: 520px;
+			border: 1px solid blue;
+			/* 如果不使用overflow: hidden，那么该元素高度高出的20px（比左元素高度）就会出现在左元素下边。使用了该属性之后就没有这样的问题了，做到了左右两栏; */
+			overflow: hidden;
+		}
+
+		/* 方式二 */
+		.box2{
+			margin-top: 40px;
+			padding-left: 200px;
+			box-sizing: border-box;
+			height: 520px;
+			width: 50%;
+			border: 1px solid blue;
+			position: relative;
+		}
+		.left2{
+			width: 200px;
+			height: 500px;
+			border: 1px solid skyblue;
+			position: absolute;
+			left: 0;
+			top: 0;	
+		}
+
+	</style>
+</head>
+<body>
+	<!-- 方式一: 使用浮动+overflow:hidden -->
+	<div class="box">
+		<div class="left">left</div>
+		<div class="right">right</div>
+	</div>
+
+	<!-- 方式二： 巧用padding + position + border-box -->
+	<div class="box2">
+		<div class="left2">left2</div>
+		right2<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		right2<br><br><br><br><br>
+		right2
+		right2
+		right2
+	</div>
+</body>
+</html>
