@@ -1,0 +1,13 @@
+// 1.em：em是一个相对单位，它相对的是父元素的font-size大小，例如父元素的font-size是10px，子元素设置了2em，那么2em就是20px;
+// 2.rem: rem也是一个相对单位，但是它是相对根元素html的font-size来说的(r=>root),所以只要针对不同设备不同的
+// 设备可以设置不同的基准值，并且把原来的px单位全部转成rem单位，这样就能做到不同设备的等比例自适应了，而且
+// rem自适应方式是能够做到宽高自适应的，其他自适应方案大多数都是宽度自适应(①.流式布局，即百分比布局；②.flex布局；
+// ③媒体查询响应式，如bootstrap)
+// 3.不断递归循环设置不同设备的html元素的基准font-size,从最后一个开始即是最小的屏幕开始设置； 2.extract方法可以从list中抽取元素
+.adapterMixin(@index) when(@index > 0){
+	html{
+		// 不同尺寸的设备，font-size不一样，这公式是等比例计算的，这样能做到宽高等比例伸缩了
+		font-size: @baseFontSize/@psdWidth * extract(@adapterDeviceList, @index);
+	}
+	.adapterMixin(@index - 1);
+}
