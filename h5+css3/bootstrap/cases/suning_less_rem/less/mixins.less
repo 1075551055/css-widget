@@ -5,9 +5,12 @@
 // ③媒体查询响应式，如bootstrap)
 // 3.不断递归循环设置不同设备的html元素的基准font-size,从最后一个开始即是最小的屏幕开始设置； 2.extract方法可以从list中抽取元素
 .adapterMixin(@index) when(@index > 0){
-	html{
+	// 媒体查询设备尺寸
+	@media screen and (min-width: extract(@adapterDeviceList, @index)) {
+		html{
 		// 不同尺寸的设备，font-size不一样，这公式是等比例计算的，这样能做到宽高等比例伸缩了
-		font-size: @baseFontSize/@psdWidth * extract(@adapterDeviceList, @index);
+			font-size: @baseFontSize/@psdWidth * extract(@adapterDeviceList, @index);
+		}
 	}
 	.adapterMixin(@index - 1);
 }
