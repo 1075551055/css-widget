@@ -1,0 +1,16 @@
+@charset 'utf-8';
+
+// 1. 定义函数使用括号；2.参数定义与变量定义一样的，如果需要默认值，那么可以在参数后面冒号加上默认值
+.f(@direction:left){
+	float: @direction;
+}
+
+.w(@width:200px){
+	width: @width;
+}
+
+
+.f_w{
+	.f();
+	.w(100px);
+}
