@@ -1,0 +1,11 @@
+@charset 'utf-8';
+.w_50 {
+  width: 50px;
+}
+.left {
+  float: left;
+}
+.w50_left {
+  width: 50px;
+  float: left;
+}

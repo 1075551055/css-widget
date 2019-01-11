@@ -8,3 +8,6 @@
 .box a:hover {
   color: blue;
 }
+.box a > img {
+  display: block;
+}
