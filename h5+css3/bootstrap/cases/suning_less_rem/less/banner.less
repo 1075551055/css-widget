@@ -1,0 +1,44 @@
+@charset 'utf-8';
+
+.banner{
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	ul{
+		&:first-child{
+			width: 100% * 10;
+			li{
+				width: 100%/10;
+				float: left;
+				a{
+					width: 100%;
+					img{
+						// 去除间隙
+						display: block;
+						width: 100%;
+					}
+				}
+			}
+		}
+		&:last-child{
+			// 使用定位后不需要清除浮动
+			position: absolute;
+			right: 20rem/@baseFontSize;
+			bottom: 20rem/@baseFontSize;
+			li{
+				float: left;
+				margin-left: 5rem/@baseFontSize;
+				// border-radius: 5rem/@baseFontSize;
+				// 相对于自己的宽度来说
+				border-radius: 50%;
+				width: 10rem/@baseFontSize;
+				height: 10rem/@baseFontSize;
+				// border: 1px solid red;
+				background: #fff;
+				&.now{
+					background: @snColor;
+				}
+			}
+		}
+	}
+}

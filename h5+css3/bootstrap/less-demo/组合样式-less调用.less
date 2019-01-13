@@ -1,0 +1,15 @@
+@charset 'utf-8';
+
+.w_50 {
+	width: 50px;
+}
+
+.left {
+	float: left;
+}
+
+.w50_left{
+	// 类混入：类似方法调用一样，把样式组合到一个样式中去。 
+	.w_50();
+	.left();
+}
