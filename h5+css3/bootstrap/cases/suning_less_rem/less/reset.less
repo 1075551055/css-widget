@@ -63,4 +63,8 @@ input, textarea{
 	margin: 0 auto;
 	// border: 1px solid red;
 	// font-size: 1rem;
+
+	// 上下都是用了fix定位，所以想看到container的内容，可以设置padding值，否则给fix定位的元素漂浮在上面遮住了，padding值与它们的高度一样
+	padding-top: 90rem/@baseFontSize;
+	padding-bottom: 100rem/@baseFontSize;
 }
